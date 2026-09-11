@@ -1,0 +1,9 @@
+{
+  "name": "mylandingpage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Abay Syzdykov Data Analyst landing page",
+  "scripts": {
+    "build": "echo 'Build successful'"
+  }
+}
