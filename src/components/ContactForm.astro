@@ -1,0 +1,248 @@
+---
+// ContactForm.astro
+// Cloudflare Turnstile Public Site Key (uses environment variable if provided, or default test key)
+const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || "1x00000000000000000000AA";
+---
+
+<section id="contact" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs uppercase tracking-wider">
+        Direct Engagement
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        Let’s Build Data Infrastructure That Converts
+      </h2>
+      <p class="text-slate-400 text-lg leading-relaxed">
+        Have an analytics pipeline bottleneck, need automated reporting, or looking for an experienced Data Analyst? Send an inquiry below.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
+      
+      <!-- Contact Details Sidebar -->
+      <aside class="lg:col-span-5 rounded-3xl glass-panel p-8 sm:p-10 space-y-8">
+        <div>
+          <h3 class="text-2xl font-bold text-white tracking-tight mb-2">Abay Syzdykov</h3>
+          <p class="text-emerald-400 font-mono text-sm">Data Analyst & BI Specialist</p>
+          <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+            Available for remote contracts, analytics consulting, dashboard implementations, and full-time senior analytical roles.
+          </p>
+        </div>
+
+        <div class="space-y-4 pt-4 border-t border-slate-800">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-mono uppercase">Typical Response Time</div>
+              <div class="text-sm font-semibold text-white">Within 24 business hours</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-mono uppercase">Location & Timezone</div>
+              <div class="text-sm font-semibold text-white">Remote (UTC+5 / Flexible EMEA & US)</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-mono uppercase">Professional Network</div>
+              <a href="https://www.linkedin.com/in/abay-syzdykov-ba4b75113" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-400 hover:underline">
+                LinkedIn Profile &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fast Discovery Call Block -->
+        <div class="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-left">
+          <div class="text-sm font-bold text-white mb-1">Prefer an interactive conversation?</div>
+          <p class="text-xs text-slate-300 mb-3">Skip email ping-pong and schedule a direct 15-minute video consultation.</p>
+          <button
+            data-cal-link="abay-syzdykov/15min"
+            data-cal-namespace="discovery-call"
+            class="w-full py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs tracking-wide transition-all shadow-md cursor-pointer"
+          >
+            Open Discovery Scheduler
+          </button>
+        </div>
+      </aside>
+
+      <!-- Secure Contact Form -->
+      <div class="lg:col-span-7 rounded-3xl glass-panel p-8 sm:p-10 border border-slate-800 relative">
+        <form id="contact-form" class="space-y-6">
+          
+          <!-- Honeypot field (anti-spam, invisible to humans) -->
+          <div style="display:none;position:absolute;left:-9999px;" aria-hidden="true">
+            <label for="company_hp">Company Security Check</label>
+            <input type="text" id="company_hp" name="company_hp" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Name -->
+            <div class="space-y-2">
+              <label for="contact-name" class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">
+                Your Full Name <span class="text-emerald-400">*</span>
+              </label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                required
+                placeholder="Elena Rostova"
+                class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="space-y-2">
+              <label for="contact-email" class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">
+                Work Email <span class="text-emerald-400">*</span>
+              </label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                required
+                placeholder="elena@company.com"
+                class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
+              />
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="space-y-2">
+            <label for="contact-message" class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">
+              Project Details & Business Challenge <span class="text-emerald-400">*</span>
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Tell me about your dataset, current reporting setup, timeline, or analytics role requirements..."
+              class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Cloudflare Turnstile Widget -->
+          <div class="pt-2">
+            <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto"></div>
+          </div>
+
+          <!-- Status Message Container -->
+          <div id="form-status" class="hidden p-4 rounded-xl text-sm font-mono"></div>
+
+          <!-- Submit Button with Spinner -->
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base transition-all duration-200 shadow-[0_0_25px_rgba(16,185,129,0.3)] hover:shadow-[0_0_35px_rgba(16,185,129,0.45)] cursor-pointer flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <span id="btn-text">Submit Inquiry</span>
+            <svg id="btn-spinner" class="hidden w-5 h-5 animate-spin text-slate-950" viewBox="0 0 24 24" fill="none">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const setupContactForm = () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    if (!form) return;
+
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const btnText = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const statusBox = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!statusBox || !submitBtn || !btnText || !btnSpinner) return;
+
+      // Extract values
+      const formData = new FormData(form);
+      const name = formData.get('name')?.toString().trim();
+      const email = formData.get('email')?.toString().trim();
+      const message = formData.get('message')?.toString().trim();
+      const company_hp = formData.get('company_hp')?.toString().trim() || '';
+      const turnstileResponse = formData.get('cf-turnstile-response')?.toString().trim() || '';
+
+      if (!name || !email || !message) {
+        statusBox.className = 'p-4 rounded-xl text-sm font-mono bg-red-500/15 border border-red-500/30 text-red-300 block';
+        statusBox.textContent = 'Please fill out all required fields.';
+        return;
+      }
+
+      // Set Loading State
+      submitBtn.disabled = true;
+      btnText.textContent = 'Transmitting securely...';
+      btnSpinner.classList.remove('hidden');
+      statusBox.classList.add('hidden');
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            company_hp,
+            'cf-turnstile-response': turnstileResponse
+          })
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          statusBox.className = 'p-4 rounded-xl text-sm font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 block';
+          statusBox.textContent = '✓ Thank you! Your inquiry has been dispatched to Abay Syzdykov. Expect a response within 24 hours.';
+          form.reset();
+
+          // Reset Turnstile if available
+          if ((window as any).turnstile) {
+            (window as any).turnstile.reset();
+          }
+        } else {
+          statusBox.className = 'p-4 rounded-xl text-sm font-mono bg-red-500/15 border border-red-500/30 text-red-300 block';
+          statusBox.textContent = `Submission failed: ${data.error || 'Server error. Please try again or reach out on LinkedIn.'}`;
+        }
+      } catch (err) {
+        statusBox.className = 'p-4 rounded-xl text-sm font-mono bg-red-500/15 border border-red-500/30 text-red-300 block';
+        statusBox.textContent = 'Network transmission error. Please verify your connection or reach out on LinkedIn.';
+      } finally {
+        submitBtn.disabled = false;
+        btnText.textContent = 'Submit Inquiry';
+        btnSpinner.classList.add('hidden');
+      }
+    });
+  };
+
+  setupContactForm();
+  document.addEventListener('astro:after-swap', setupContactForm);
+</script>

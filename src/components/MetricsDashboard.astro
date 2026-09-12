@@ -1,0 +1,349 @@
+---
+// MetricsDashboard.astro
+---
+
+<section id="showcase" class="py-20 bg-slate-950/60 relative border-y border-slate-800/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs uppercase tracking-wider mb-3">
+          Interactive Proof of Work
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Executive Telemetry & SaaS Unit Economics
+        </h2>
+        <p class="text-slate-400 text-base mt-2 max-w-2xl">
+          Live embedded analytics engine displaying multi-cohort subscriber retention, MRR growth vectors, and unit economic health. Switch metrics and time horizons below.
+        </p>
+      </div>
+
+      <!-- Controls: Time Range -->
+      <div class="flex items-center gap-1.5 p-1.5 rounded-xl bg-slate-900 border border-slate-800 self-start md:self-auto">
+        <button type="button" data-range="7d" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">7D</button>
+        <button type="button" data-range="30d" class="time-range-btn active px-3 py-1.5 text-xs font-mono rounded-lg bg-emerald-500 text-slate-950 font-bold transition-colors cursor-pointer">30D</button>
+        <button type="button" data-range="90d" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">90D</button>
+        <button type="button" data-range="1y" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">1Y</button>
+      </div>
+    </div>
+
+    <!-- KPI Summary Row -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+      
+      <div class="p-5 rounded-2xl glass-panel relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
+        <div class="text-xs font-mono text-slate-400 mb-1">Monthly Recurring Revenue</div>
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight" id="kpi-mrr">$148,500</div>
+        <div class="flex items-center gap-1.5 mt-2 text-xs font-mono text-emerald-400">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          <span>+18.4% MoM</span>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-2xl glass-panel relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
+        <div class="text-xs font-mono text-slate-400 mb-1">Net Retention Rate (NRR)</div>
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight" id="kpi-nrr">114.2%</div>
+        <div class="flex items-center gap-1.5 mt-2 text-xs font-mono text-emerald-400">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          <span>+3.1% YoY</span>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-2xl glass-panel relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
+        <div class="text-xs font-mono text-slate-400 mb-1">Avg Customer LTV</div>
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight" id="kpi-ltv">$3,820</div>
+        <div class="flex items-center gap-1.5 mt-2 text-xs font-mono text-emerald-400">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          <span>+12.6% vs Q1</span>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-2xl glass-panel relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
+        <div class="text-xs font-mono text-slate-400 mb-1">LTV / CAC Efficiency</div>
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight" id="kpi-cac">4.8x</div>
+        <div class="flex items-center gap-1.5 mt-2 text-xs font-mono text-emerald-400">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Top-Decile Benchmark</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Chart Container Card -->
+    <div class="rounded-3xl glass-panel p-6 sm:p-8 relative">
+      
+      <!-- Metric Selection Tabs -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
+        <div class="flex flex-wrap gap-2">
+          <button type="button" data-metric="revenue" class="metric-tab-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 transition-all cursor-pointer">
+            Revenue & ARR Growth
+          </button>
+          <button type="button" data-metric="retention" class="metric-tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
+            Cohort Retention Curve
+          </button>
+          <button type="button" data-metric="ltv" class="metric-tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
+            LTV / Unit Economics
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Telemetry Source: Snowflake / dbt mart</span>
+        </div>
+      </div>
+
+      <!-- ECharts Canvas Container -->
+      <div class="relative w-full h-[380px] sm:h-[440px] pt-4" id="echarts-container">
+        <!-- Canvas is injected here by JS -->
+      </div>
+
+      <!-- Footer Info Strip -->
+      <div class="mt-4 pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono gap-2">
+        <div>Model: Autoregressive Moving-Average (ARIMA) + Kaplan-Meier Cohort Analysis</div>
+        <div>Visual Engine: Apache ECharts 5.6</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import * as echarts from 'echarts';
+
+  let chartInstance: echarts.ECharts | null = null;
+  let currentMetric = 'revenue';
+  let currentRange = '30d';
+
+  // Sample datasets for each metric and period
+  const dataSets: Record<string, Record<string, { dates: string[]; values: number[]; secondaryValues?: number[]; unit: string }>> = {
+    revenue: {
+      '7d': {
+        dates: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        values: [138200, 140100, 142500, 144200, 146000, 147800, 148500],
+        unit: '$'
+      },
+      '30d': {
+        dates: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+        values: [121000, 127500, 133200, 139000, 144500, 148500],
+        unit: '$'
+      },
+      '90d': {
+        dates: ['M1-W1', 'M1-W3', 'M2-W1', 'M2-W3', 'M3-W1', 'M3-W3'],
+        values: [102000, 110400, 122100, 131000, 141200, 148500],
+        unit: '$'
+      },
+      '1y': {
+        dates: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        values: [78000, 84000, 91000, 99500, 107000, 115000, 122000, 129000, 135000, 140000, 145000, 148500],
+        unit: '$'
+      }
+    },
+    retention: {
+      '7d': {
+        dates: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+        values: [100, 86, 79, 74, 71, 68, 66],
+        unit: '%'
+      },
+      '30d': {
+        dates: ['Day 1', 'Day 5', 'Day 10', 'Day 15', 'Day 20', 'Day 25', 'Day 30'],
+        values: [100, 78, 69, 64, 61, 58, 56],
+        unit: '%'
+      },
+      '90d': {
+        dates: ['Month 0', 'Month 1', 'Month 2', 'Month 3'],
+        values: [100, 68, 57, 52],
+        unit: '%'
+      },
+      '1y': {
+        dates: ['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9', 'M10', 'M11', 'M12'],
+        values: [100, 72, 63, 58, 54, 51, 49, 47, 46, 45, 44, 43],
+        unit: '%'
+      }
+    },
+    ltv: {
+      '7d': {
+        dates: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        values: [3620, 3650, 3690, 3720, 3770, 3800, 3820],
+        unit: '$'
+      },
+      '30d': {
+        dates: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+        values: [3200, 3340, 3480, 3600, 3720, 3820],
+        unit: '$'
+      },
+      '90d': {
+        dates: ['M1-W1', 'M1-W3', 'M2-W1', 'M2-W3', 'M3-W1', 'M3-W3'],
+        values: [2800, 3050, 3250, 3450, 3650, 3820],
+        unit: '$'
+      },
+      '1y': {
+        dates: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        values: [1950, 2100, 2300, 2500, 2750, 3000, 3200, 3400, 3550, 3680, 3750, 3820],
+        unit: '$'
+      }
+    }
+  };
+
+  const initECharts = () => {
+    const container = document.getElementById('echarts-container');
+    if (!container) return;
+
+    if (chartInstance) {
+      chartInstance.dispose();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    chartInstance = echarts.init(container);
+
+    renderChart(isDark);
+  };
+
+  const renderChart = (isDark: boolean) => {
+    if (!chartInstance) return;
+
+    const data = dataSets[currentMetric][currentRange];
+    const textColor = isDark ? '#94a3b8' : '#64748b';
+    const gridColor = isDark ? 'rgba(255, 255, 255, 0.07)' : 'rgba(0, 0, 0, 0.08)';
+
+    const option: echarts.EChartsOption = {
+      backgroundColor: 'transparent',
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: isDark ? '#0f172a' : '#ffffff',
+        borderColor: isDark ? '#334155' : '#cbd5e1',
+        textStyle: {
+          color: isDark ? '#f8fafc' : '#0f172a',
+          fontFamily: 'JetBrains Mono, monospace',
+          fontSize: 12
+        },
+        valueFormatter: (value) => {
+          if (typeof value === 'number') {
+            return data.unit === '$' 
+              ? `$${value.toLocaleString()}` 
+              : `${value}${data.unit}`;
+          }
+          return String(value);
+        }
+      },
+      grid: {
+        left: '2%',
+        right: '3%',
+        bottom: '8%',
+        top: '12%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: data.dates,
+        axisLine: { lineStyle: { color: gridColor } },
+        axisLabel: {
+          color: textColor,
+          fontFamily: 'JetBrains Mono, monospace',
+          fontSize: 11
+        }
+      },
+      yAxis: {
+        type: 'value',
+        axisLine: { show: false },
+        splitLine: { lineStyle: { color: gridColor, type: 'dashed' } },
+        axisLabel: {
+          color: textColor,
+          fontFamily: 'JetBrains Mono, monospace',
+          fontSize: 11,
+          formatter: (val: number) => {
+            if (data.unit === '$') {
+              return val >= 1000 ? `$${val / 1000}k` : `$${val}`;
+            }
+            return `${val}${data.unit}`;
+          }
+        }
+      },
+      series: [
+        {
+          name: currentMetric.toUpperCase(),
+          type: 'line',
+          smooth: 0.35,
+          data: data.values,
+          symbolSize: 7,
+          showSymbol: false,
+          itemStyle: {
+            color: '#10b981'
+          },
+          lineStyle: {
+            width: 3,
+            color: '#10b981',
+            shadowColor: 'rgba(16, 185, 129, 0.4)',
+            shadowBlur: 10
+          },
+          areaStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              { offset: 0, color: 'rgba(16, 185, 129, 0.35)' },
+              { offset: 1, color: 'rgba(16, 185, 129, 0.01)' }
+            ])
+          }
+        }
+      ]
+    };
+
+    chartInstance.setOption(option, true);
+  };
+
+  // Wire up event listeners
+  const setupControls = () => {
+    // Metric Tabs
+    const metricBtns = document.querySelectorAll('.metric-tab-btn');
+    metricBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        metricBtns.forEach(b => {
+          b.classList.remove('active', 'bg-emerald-500/10', 'border-emerald-500/30', 'text-emerald-400');
+          b.classList.add('bg-slate-900/60', 'border-slate-800', 'text-slate-400');
+        });
+        btn.classList.add('active', 'bg-emerald-500/10', 'border-emerald-500/30', 'text-emerald-400');
+        btn.classList.remove('bg-slate-900/60', 'border-slate-800', 'text-slate-400');
+
+        currentMetric = (btn as HTMLElement).dataset.metric || 'revenue';
+        const isDark = document.documentElement.classList.contains('dark');
+        renderChart(isDark);
+      });
+    });
+
+    // Time Range Buttons
+    const rangeBtns = document.querySelectorAll('.time-range-btn');
+    rangeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        rangeBtns.forEach(b => {
+          b.classList.remove('active', 'bg-emerald-500', 'text-slate-950', 'font-bold');
+          b.classList.add('text-slate-400');
+        });
+        btn.classList.add('active', 'bg-emerald-500', 'text-slate-950', 'font-bold');
+        btn.classList.remove('text-slate-400');
+
+        currentRange = (btn as HTMLElement).dataset.range || '30d';
+        const isDark = document.documentElement.classList.contains('dark');
+        renderChart(isDark);
+      });
+    });
+
+    // Theme change listener
+    window.addEventListener('theme-changed', (e: any) => {
+      renderChart(e.detail.isDark);
+    });
+
+    // Window Resize
+    window.addEventListener('resize', () => {
+      if (chartInstance) {
+        chartInstance.resize();
+      }
+    });
+  };
+
+  // Initialize on load and on Astro page transitions
+  initECharts();
+  setupControls();
+  document.addEventListener('astro:after-swap', () => {
+    initECharts();
+    setupControls();
+  });
+</script>

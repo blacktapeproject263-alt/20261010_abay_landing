@@ -1,0 +1,154 @@
+---
+// Hero.astro
+---
+
+<section id="overview" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+  <!-- Subtle ambient glow background -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Text & Value Prop -->
+      <div class="lg:col-span-7 space-y-8">
+        
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono tracking-wide">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>AVAILABLE FOR NEW ENGAGEMENTS</span>
+        </div>
+
+        <!-- Main Heading -->
+        <div class="space-y-4">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+            Transforming Complex Data into <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Actionable Business Alpha</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+            Hi, I’m <strong class="text-white font-semibold">Abay Syzdykov</strong> — a <strong>Data Analyst & BI Specialist</strong>. I architect automated reporting engines, multi-touch attribution pipelines, and predictive churn models that bridge technical data infrastructure with C-suite commercial decisions.
+          </p>
+        </div>
+
+        <!-- Dual Call-to-Action -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <!-- Primary: Cal.com Discovery Call -->
+          <button
+            data-cal-link="abay-syzdykov/15min"
+            data-cal-namespace="discovery-call"
+            data-cal-config='{"layout":"month_view"}'
+            class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base transition-all duration-200 shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] cursor-pointer hover:-translate-y-0.5"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Book a 15-min Discovery Call</span>
+          </button>
+
+          <!-- Secondary: Direct Download Resume PDF -->
+          <a
+            href="/cv-abay-syzdykov.pdf"
+            download="Abay_Syzdykov_Data_Analyst_CV.pdf"
+            class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-base transition-all duration-200 cursor-pointer hover:border-emerald-500/50 hover:-translate-y-0.5"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download CV (PDF)</span>
+          </a>
+        </div>
+
+        <!-- Tech Stack Badges -->
+        <div class="pt-4 border-t border-slate-800/80">
+          <p class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3">Core Tooling & Competencies</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">SQL (Snowflake / BigQuery / Postgres)</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">Python (Pandas / Scikit / NumPy)</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">Power BI & Advanced DAX</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">Apache ECharts / DataViz</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">ETL & dbt Pipelines</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">Statistical Modeling & A/B Testing</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Portrait & Metrics Highlights -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        
+        <div class="relative w-full max-w-md">
+          <!-- Outer gradient border frame -->
+          <div class="relative p-1 rounded-3xl bg-gradient-to-b from-emerald-500/40 via-slate-800/80 to-emerald-500/20 shadow-2xl backdrop-blur-sm">
+            
+            <div class="relative rounded-[22px] overflow-hidden bg-slate-900 border border-slate-800">
+              <img 
+                src="/assets/hero-portrait.jpg" 
+                alt="Abay Syzdykov - Data Analyst & BI Specialist" 
+                class="w-full h-[440px] object-cover object-top filter contrast-[1.03] brightness-[0.98]"
+                loading="eager"
+              />
+
+              <!-- Gradient overlay on image bottom -->
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+
+              <!-- Overlay Card Badge inside image -->
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 border border-slate-700/70 backdrop-blur-md">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="text-sm font-bold text-white tracking-wide">Abay Syzdykov</h3>
+                    <p class="text-xs text-emerald-400 font-mono">Data Analyst & BI Specialist</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                      Top Rated
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Floating Metric Badge 1 -->
+          <div class="absolute -top-4 -left-4 sm:-left-6 p-3.5 rounded-2xl glass-panel shadow-xl flex items-center gap-3 border border-emerald-500/30 animate-bounce [animation-duration:6s]">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-mono">Reporting Automation</div>
+              <div class="text-sm font-bold text-white font-mono">100% Zero-Touch</div>
+            </div>
+          </div>
+
+          <!-- Floating Metric Badge 2 -->
+          <div class="absolute -bottom-6 -right-4 sm:-right-6 p-3.5 rounded-2xl glass-panel shadow-xl flex items-center gap-3 border border-emerald-500/30">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-mono">Cost Reduction</div>
+              <div class="text-sm font-bold text-emerald-400 font-mono">+$320K ARR Impact</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

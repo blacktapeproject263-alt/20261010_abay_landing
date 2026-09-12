@@ -1,0 +1,200 @@
+---
+// CaseStudies.astro
+interface CaseStudy {
+  id: string;
+  tag: string;
+  title: string;
+  clientType: string;
+  situation: string;
+  action: string;
+  resultMetrics: { label: string; value: string; detail: string }[];
+  techStack: string[];
+  githubUrl: string;
+  dashboardAnchor: string;
+}
+
+const cases: CaseStudy[] = [
+  {
+    id: "churn-engine",
+    tag: "FinTech & SaaS",
+    title: "Subscriber Cohort Retention & Churn Prediction Engine",
+    clientType: "B2B SaaS ($12M ARR)",
+    situation: "Subscription churn was rising by 3.2% QoQ without visibility into which user cohorts decayed after month 2. The executive team relied on lagging 30-day billing summaries and lacked proactive leading risk indicators.",
+    action: "Architected automated dbt/Snowflake data models structuring 1.8M subscriber activity logs. Built Python survival analysis (Kaplan-Meier & Cox Proportional Hazards) to isolate core friction milestones. Designed an automated Power BI dashboard with DAX-driven cohort decay tracking and real-time alerts for at-risk accounts.",
+    resultMetrics: [
+      { label: "Cohort Churn Reduction", value: "-18%", detail: "Across at-risk mid-tier subscribers" },
+      { label: "Preserved Capital", value: "+$320K", detail: "Annualized Recurring Revenue saved" },
+      { label: "Reporting Efficiency", value: "14h → 0h", detail: "Automated manual weekly spreadsheet tasks" }
+    ],
+    techStack: ["Snowflake", "dbt", "Python (Lifelines/Pandas)", "Power BI", "Advanced DAX"],
+    githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+    dashboardAnchor: "#showcase"
+  },
+  {
+    id: "marketing-attribution",
+    tag: "E-Commerce & DTC",
+    title: "Multi-Touch Marketing Attribution & Unit Economics Engine",
+    clientType: "Direct-to-Consumer Brand ($2.4M Ad Spend)",
+    situation: "Marketing spend across Google Search, Meta Ads, and TikTok had conflicting channel ROAS due to last-click attribution bias, resulting in over-budgeting low-efficiency campaigns and underfunding discovery channels.",
+    action: "Engineered a first-party Markov Chain multi-touch attribution algorithm in Python. Cleaned and joined 4.2M clickstream events using SQL window functions in BigQuery. Delivered an interactive executive scenario simulator that modeled revenue yield per dollar invested across each channel.",
+    resultMetrics: [
+      { label: "Blended ROAS Uplift", value: "+23%", detail: "Return on ad spend optimized" },
+      { label: "Budget Reallocated", value: "28%", detail: "Shifted to high-converting mid-funnel paths" },
+      { label: "Net Incremental Rev", value: "+$640K", detail: "Directly attributable to optimized mix" }
+    ],
+    techStack: ["Google BigQuery", "Python (NetworkX/NumPy)", "SQL Window Functions", "Power BI", "ECharts"],
+    githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+    dashboardAnchor: "#showcase"
+  },
+  {
+    id: "logistics-sla",
+    tag: "Supply Chain & Ops",
+    title: "Fulfillment SLA Optimization & Warehouse Intake Forecasting",
+    clientType: "Regional Logistics 3PL Network",
+    situation: "Peak season volume surges caused a 12% SLA fulfillment breach rate, triggering $85K in contractual carrier penalties and overburdening warehouse dispatch teams.",
+    action: "Trained Python ARIMA & Prophet time-series models for parcel intake volume prediction with a 94.2% accuracy rate. Streamlined ingestion pipelines into partitioned Postgres data marts and rolled out live operational Kanban dashboards for warehouse floor leads.",
+    resultMetrics: [
+      { label: "SLA Delivery Breaches", value: "12% → 2.4%", detail: "Slashing late dispatches by 80%" },
+      { label: "Penalty Avoidance", value: "+$75,000", detail: "Contractual SLA fees avoided" },
+      { label: "On-Time Dispatch Rate", value: "98.6%", detail: "Sustained during Q4 peak holiday season" }
+    ],
+    techStack: ["PostgreSQL", "Python (Prophet/Statsmodels)", "Automated ETL", "ECharts", "Metabase"],
+    githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+    dashboardAnchor: "#showcase"
+  }
+];
+---
+
+<section id="cases" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs uppercase tracking-wider">
+        STAR Framework Evidence
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        Featured Commercial Case Studies
+      </h2>
+      <p class="text-slate-400 text-lg leading-relaxed">
+        Real business challenges solved through quantitative rigor, production data engineering, and C-suite actionable reporting.
+      </p>
+    </div>
+
+    <!-- Case Studies Stack -->
+    <div class="space-y-12">
+      {cases.map((item, idx) => (
+        <article class="rounded-3xl glass-panel p-6 sm:p-10 border border-slate-800/90 hover:border-emerald-500/40 transition-all duration-300 relative group overflow-hidden">
+          
+          <!-- Top Tag & Meta -->
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center font-mono text-xs font-bold text-emerald-400">
+                0{idx + 1}
+              </span>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                {item.tag}
+              </span>
+              <span class="text-xs font-mono text-slate-400">
+                Client: {item.clientType}
+              </span>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex items-center gap-3">
+              <a 
+                href={item.dashboardAnchor} 
+                class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 transition-all cursor-pointer border border-emerald-500/30"
+              >
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <span>View Interactive Dashboard</span>
+              </a>
+              <a 
+                href={item.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white transition-all border border-slate-700"
+              >
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>GitHub Source</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Title -->
+          <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-6 mb-8">
+            {item.title}
+          </h3>
+
+          <!-- STAR Content Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+            
+            <!-- Situation & Action (8 cols) -->
+            <div class="lg:col-span-8 space-y-6">
+              
+              <!-- Situation & Task -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-xs font-mono text-amber-400 font-semibold uppercase tracking-wider">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                  Situation & Business Problem (Task)
+                </div>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  {item.situation}
+                </p>
+              </div>
+
+              <!-- Action & Technical Pipeline -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 font-semibold uppercase tracking-wider">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  Technical Pipeline & Architecture (Action)
+                </div>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  {item.action}
+                </p>
+              </div>
+
+              <!-- Tech Pills -->
+              <div class="pt-2 flex flex-wrap gap-2">
+                {item.techStack.map(tech => (
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 text-slate-300 border border-slate-700/80">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+            </div>
+
+            <!-- Quantified Results (4 cols) -->
+            <div class="lg:col-span-4 bg-slate-900/80 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between space-y-6">
+              <div class="text-xs font-mono text-emerald-400 uppercase tracking-wider font-semibold flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Quantified Outcomes (Result)
+              </div>
+
+              <div class="space-y-4">
+                {item.resultMetrics.map(metric => (
+                  <div class="pb-3 border-b border-slate-800 last:border-none last:pb-0">
+                    <div class="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400">
+                      {metric.value}
+                    </div>
+                    <div class="text-xs font-bold text-slate-200 uppercase tracking-wider mt-0.5">
+                      {metric.label}
+                    </div>
+                    <div class="text-xs text-slate-400 mt-0.5">
+                      {metric.detail}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>
