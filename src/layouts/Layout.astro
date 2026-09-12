@@ -7,20 +7,23 @@ import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/jetbrains-mono/500.css';
 import '@/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import type { Locale } from '@/i18n/translations';
 
 interface Props {
   title?: string;
   description?: string;
+  lang?: Locale;
 }
 
 const {
   title = "Abay Syzdykov | Data Analyst & BI Specialist",
-  description = "Senior Data Analyst & BI Specialist specializing in SQL, Python, Power BI, ECharts, ETL pipelines, and statistical modeling."
+  description = "Senior Data Analyst & BI Specialist specializing in SQL, Python, Power BI, ECharts, ETL pipelines, and statistical modeling.",
+  lang = "en"
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang={lang} class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,6 +32,11 @@ const {
 
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    <link rel="alternate" hreflang="en" href="https://abay-landing.pages.dev/" />
+    <link rel="alternate" hreflang="ru" href="https://abay-landing.pages.dev/ru" />
+    <link rel="alternate" hreflang="kk" href="https://abay-landing.pages.dev/kk" />
+    <link rel="alternate" hreflang="x-default" href="https://abay-landing.pages.dev/" />
 
     <!-- Open Graph / Social Cards -->
     <meta property="og:type" content="website" />

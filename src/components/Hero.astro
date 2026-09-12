@@ -1,5 +1,14 @@
 ---
 // Hero.astro
+import type { Locale } from '@/i18n/translations';
+import { translations } from '@/i18n/translations';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = translations[lang];
 ---
 
 <section id="overview" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
@@ -18,16 +27,16 @@
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span>AVAILABLE FOR NEW ENGAGEMENTS</span>
+          <span>{t.hero.availableBadge}</span>
         </div>
 
         <!-- Main Heading -->
         <div class="space-y-4">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-            Transforming Complex Data into <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Actionable Business Alpha</span>
+            {t.hero.headingPrefix}<span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">{t.hero.headingGradient}</span>
           </h1>
           <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
-            Hi, I’m <strong class="text-white font-semibold">Abay Syzdykov</strong> — a <strong>Data Analyst & BI Specialist</strong>. I architect automated reporting engines, multi-touch attribution pipelines, and predictive churn models that bridge technical data infrastructure with C-suite commercial decisions.
+            {t.hero.bioIntro}<strong class="text-white font-semibold">{t.hero.bioName}</strong> — <strong>{t.hero.bioRole}</strong>{t.hero.bioBody}
           </p>
         </div>
 
@@ -46,13 +55,13 @@
               <line x1="8" y1="2" x2="8" y2="6"></line>
               <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
-            <span>Book a 15-min Discovery Call</span>
+            <span>{t.hero.bookCallBtn}</span>
           </button>
 
           <!-- Secondary: Direct Download Resume PDF -->
           <a
             href="/cv-abay-syzdykov.pdf"
-            download="Abay_Syzdykov_Data_Analyst_CV.pdf"
+            download={t.hero.cvFileName}
             class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-base transition-all duration-200 cursor-pointer hover:border-emerald-500/50 hover:-translate-y-0.5"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -60,20 +69,19 @@
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            <span>Download CV (PDF)</span>
+            <span>{t.hero.downloadCvBtn}</span>
           </a>
         </div>
 
         <!-- Tech Stack Badges -->
         <div class="pt-4 border-t border-slate-800/80">
-          <p class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3">Core Tooling & Competencies</p>
+          <p class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3">{t.hero.toolingTitle}</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">SQL (Snowflake / BigQuery / Postgres)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">Python (Pandas / Scikit / NumPy)</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">Power BI & Advanced DAX</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">Apache ECharts / DataViz</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">ETL & dbt Pipelines</span>
-            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">Statistical Modeling & A/B Testing</span>
+            {t.hero.tools.map((tool) => (
+              <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">
+                {tool}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -89,7 +97,7 @@
             <div class="relative rounded-[22px] overflow-hidden bg-slate-900 border border-slate-800">
               <img 
                 src="/assets/hero-portrait.jpg" 
-                alt="Abay Syzdykov - Data Analyst & BI Specialist" 
+                alt={`${t.hero.bioName} - ${t.hero.bioRole}`}
                 class="w-full h-[440px] object-cover object-top filter contrast-[1.03] brightness-[0.98]"
                 loading="eager"
               />
@@ -101,12 +109,12 @@
               <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 border border-slate-700/70 backdrop-blur-md">
                 <div class="flex items-center justify-between">
                   <div>
-                    <h3 class="text-sm font-bold text-white tracking-wide">Abay Syzdykov</h3>
-                    <p class="text-xs text-emerald-400 font-mono">Data Analyst & BI Specialist</p>
+                    <h3 class="text-sm font-bold text-white tracking-wide">{t.hero.bioName}</h3>
+                    <p class="text-xs text-emerald-400 font-mono">{t.hero.bioRole}</p>
                   </div>
                   <div class="text-right">
                     <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                      Top Rated
+                      {t.hero.topRatedBadge}
                     </span>
                   </div>
                 </div>
@@ -125,8 +133,8 @@
               </svg>
             </div>
             <div>
-              <div class="text-xs text-slate-400 font-mono">Reporting Automation</div>
-              <div class="text-sm font-bold text-white font-mono">100% Zero-Touch</div>
+              <div class="text-xs text-slate-400 font-mono">{t.hero.badge1Label}</div>
+              <div class="text-sm font-bold text-white font-mono">{t.hero.badge1Value}</div>
             </div>
           </div>
 
@@ -140,8 +148,8 @@
               </svg>
             </div>
             <div>
-              <div class="text-xs text-slate-400 font-mono">Cost Reduction</div>
-              <div class="text-sm font-bold text-emerald-400 font-mono">+$320K ARR Impact</div>
+              <div class="text-xs text-slate-400 font-mono">{t.hero.badge2Label}</div>
+              <div class="text-sm font-bold text-emerald-400 font-mono">{t.hero.badge2Value}</div>
             </div>
           </div>
 

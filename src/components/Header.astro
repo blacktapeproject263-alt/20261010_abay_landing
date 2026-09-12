@@ -1,11 +1,25 @@
 ---
 // Header.astro
+import type { Locale } from '@/i18n/translations';
+import { translations, locales, localeNames } from '@/i18n/translations';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = translations[lang];
+
+const getLocalePath = (targetLocale: Locale) => {
+  if (targetLocale === 'en') return '/';
+  return `/${targetLocale}`;
+};
 ---
 
 <header class="sticky top-0 z-50 w-full glass-header transition-all duration-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
     <!-- Brand -->
-    <a href="#overview" class="flex items-center gap-3 group">
+    <a href={getLocalePath(lang)} class="flex items-center gap-3 group">
       <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400/20 to-emerald-600/30 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -15,21 +29,39 @@
       </div>
       <div>
         <span class="text-lg font-bold tracking-tight text-white dark:text-white">Abay Syzdykov</span>
-        <span class="hidden sm:block text-xs font-mono text-emerald-400/90 tracking-wider uppercase">Data Analyst & BI</span>
+        <span class="hidden sm:block text-xs font-mono text-emerald-400/90 tracking-wider uppercase">{t.hero.bioRole}</span>
       </div>
     </a>
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-      <a href="#overview" class="hover:text-emerald-400 transition-colors">Overview</a>
-      <a href="#showcase" class="hover:text-emerald-400 transition-colors">Live Showcase</a>
-      <a href="#cases" class="hover:text-emerald-400 transition-colors">Case Studies</a>
-      <a href="#skills" class="hover:text-emerald-400 transition-colors">Stack & Methods</a>
-      <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
+      <a href="#overview" class="hover:text-emerald-400 transition-colors">{t.nav.overview}</a>
+      <a href="#showcase" class="hover:text-emerald-400 transition-colors">{t.nav.showcase}</a>
+      <a href="#cases" class="hover:text-emerald-400 transition-colors">{t.nav.cases}</a>
+      <a href="#skills" class="hover:text-emerald-400 transition-colors">{t.nav.skills}</a>
+      <a href="#contact" class="hover:text-emerald-400 transition-colors">{t.nav.contact}</a>
     </nav>
 
-    <!-- Actions: Theme Switcher & Cal.com Trigger -->
-    <div class="flex items-center gap-3">
+    <!-- Actions: Language Switcher, Theme Switcher & Cal.com Trigger -->
+    <div class="flex items-center gap-2.5 sm:gap-3">
+      <!-- Language Switcher: EN | РУС | ҚАЗ -->
+      <nav aria-label="Language selector" class="inline-flex items-center p-1 rounded-xl bg-slate-900/90 border border-slate-700/80 font-mono text-xs shadow-inner">
+        {locales.map((l) => (
+          <a
+            href={getLocalePath(l)}
+            class:list={[
+              "px-2.5 py-1 rounded-lg text-xs font-semibold transition-all duration-200",
+              lang === l 
+                ? "bg-emerald-500 text-slate-950 font-bold shadow-[0_0_12px_rgba(16,185,129,0.35)]" 
+                : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
+            ]}
+            aria-current={lang === l ? "page" : undefined}
+          >
+            {localeNames[l]}
+          </a>
+        ))}
+      </nav>
+
       <!-- Dark/Light Theme Switcher -->
       <button 
         id="theme-toggle"
@@ -58,7 +90,7 @@
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        <span>Book a Call</span>
+        <span>{t.nav.bookCall}</span>
       </button>
 
       <!-- Mobile Menu Toggle -->
@@ -77,17 +109,37 @@
 
   <!-- Mobile Dropdown -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-[#090d16]/95 backdrop-blur-xl px-4 pt-4 pb-6 space-y-3">
-    <a href="#overview" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Overview</a>
-    <a href="#showcase" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Live Showcase</a>
-    <a href="#cases" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Case Studies</a>
-    <a href="#skills" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Stack & Methods</a>
-    <a href="#contact" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">Contact</a>
+    <!-- Mobile Lang Switcher -->
+    <div class="flex items-center justify-between pb-3 border-b border-white/10">
+      <span class="text-xs font-mono uppercase text-slate-400">Language</span>
+      <div class="inline-flex items-center p-1 rounded-xl bg-slate-900 border border-slate-700 font-mono text-xs">
+        {locales.map((l) => (
+          <a
+            href={getLocalePath(l)}
+            class:list={[
+              "px-3 py-1 rounded-lg text-xs font-semibold transition-all",
+              lang === l 
+                ? "bg-emerald-500 text-slate-950 font-bold shadow-[0_0_10px_rgba(16,185,129,0.3)]" 
+                : "text-slate-400 hover:text-white"
+            ]}
+          >
+            {localeNames[l]}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <a href="#overview" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.overview}</a>
+    <a href="#showcase" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.showcase}</a>
+    <a href="#cases" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.cases}</a>
+    <a href="#skills" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.skills}</a>
+    <a href="#contact" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.contact}</a>
     <button
       data-cal-link="abay-syzdykov/15min"
       data-cal-namespace="discovery-call"
       class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-500 text-slate-950 font-semibold"
     >
-      Book a 15-min Call
+      {t.nav.bookCallShort}
     </button>
   </div>
 </header>

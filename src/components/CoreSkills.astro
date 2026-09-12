@@ -1,54 +1,14 @@
 ---
 // CoreSkills.astro
-const skillCategories = [
-  {
-    title: "SQL & Data Modeling",
-    icon: "database",
-    desc: "Complex analytical queries, recursive CTEs, window functions, star schema design, and query optimization for high-cardinality databases.",
-    tools: ["PostgreSQL", "Snowflake", "Google BigQuery", "dbt", "Dimensional Modeling"]
-  },
-  {
-    title: "Python Analytics & ML",
-    icon: "code",
-    desc: "Exploratory data analysis, statistical tests, cohort decay curves, regression, classification, and time-series demand forecasting.",
-    tools: ["Pandas", "NumPy", "Scikit-Learn", "Prophet", "Lifelines"]
-  },
-  {
-    title: "Business Intelligence & DAX",
-    icon: "bar-chart",
-    desc: "Enterprise Power BI reporting architecture, dynamic DAX measures, calculation groups, row-level security (RLS), and drill-through UX.",
-    tools: ["Power BI", "Advanced DAX", "Tabular Editor", "Dataflows", "Executive KPIs"]
-  },
-  {
-    title: "Commercial Decision Support",
-    icon: "trending-up",
-    desc: "Translating ambiguous operational problems into structured hypotheses, unit economics tracking (LTV, CAC, Payback), and board presentations.",
-    tools: ["Unit Economics", "A/B Testing", "Churn Mitigation", "Marketing Attribution", "Stakeholder Alignment"]
-  }
-];
+import type { Locale } from '@/i18n/translations';
+import { translations } from '@/i18n/translations';
 
-const workSteps = [
-  {
-    step: "01",
-    title: "Diagnose & Align",
-    desc: "Isolate the commercial bottleneck, interview key stakeholders, and define unambiguous North Star metrics."
-  },
-  {
-    step: "02",
-    title: "Model & Transform",
-    desc: "Clean raw telemetry, write robust dbt/SQL transforms, and validate data integrity against business edge cases."
-  },
-  {
-    step: "03",
-    title: "Predict & Visualize",
-    desc: "Build self-serve interactive dashboards and statistical forecasting models with transparent confidence bounds."
-  },
-  {
-    step: "04",
-    title: "Automate & Drive ROI",
-    desc: "Deploy scheduled alerting, eliminate manual reporting cycles, and present synthesized recommendations."
-  }
-];
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = translations[lang];
 ---
 
 <section id="skills" class="py-24 bg-slate-950/40 relative border-t border-slate-800/80">
@@ -57,19 +17,19 @@ const workSteps = [
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs uppercase tracking-wider">
-        Capabilities & Methodology
+        {t.skills.badge}
       </div>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-        Engineered for Analytical Rigor
+        {t.skills.title}
       </h2>
       <p class="text-slate-400 text-lg leading-relaxed">
-        Combining data engineering fundamentals with executive commercial awareness to deliver reports that leaders trust.
+        {t.skills.description}
       </p>
     </div>
 
     <!-- 4 Skill Category Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-      {skillCategories.map(cat => (
+      {t.skills.categories.map(cat => (
         <div class="rounded-3xl glass-panel p-8 hover:border-emerald-500/40 transition-all duration-300 group">
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
@@ -123,14 +83,14 @@ const workSteps = [
     <!-- 4-Step Analytical Process -->
     <div class="rounded-3xl glass-panel p-8 sm:p-12 border border-slate-800">
       <div class="mb-10 text-center sm:text-left">
-        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest font-semibold">Delivery Framework</span>
+        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest font-semibold">{t.skills.frameworkBadge}</span>
         <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-1">
-          From Raw Ingestion to Executive Action
+          {t.skills.frameworkTitle}
         </h3>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {workSteps.map(step => (
+        {t.skills.steps.map(step => (
           <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/90 relative group hover:border-emerald-500/30 transition-colors">
             <div class="text-2xl font-black font-mono text-emerald-500/40 group-hover:text-emerald-400 transition-colors mb-3">
               {step.step}

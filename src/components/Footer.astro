@@ -1,5 +1,14 @@
 ---
 // Footer.astro
+import type { Locale } from '@/i18n/translations';
+import { translations } from '@/i18n/translations';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = translations[lang];
 ---
 
 <footer class="py-12 border-t border-slate-800 bg-slate-950/80 text-slate-400 text-sm">
@@ -13,23 +22,23 @@
         </div>
         <div>
           <div class="text-white font-semibold">Abay Syzdykov</div>
-          <div class="text-xs text-slate-400 font-mono">© {new Date().getFullYear()} All rights reserved. Data Analyst & BI Specialist.</div>
+          <div class="text-xs text-slate-400 font-mono">© {new Date().getFullYear()} {t.footer.rights}</div>
         </div>
       </div>
 
       <!-- Edge Infrastructure Badge -->
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300">
         <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span>Zero-Cost Edge Infrastructure • Cloudflare Pages + Workers</span>
+        <span>{t.footer.edgeBadge}</span>
       </div>
 
       <!-- Links -->
       <div class="flex items-center gap-6 text-xs font-mono">
-        <a href="#overview" class="hover:text-emerald-400 transition-colors">Overview</a>
-        <a href="#showcase" class="hover:text-emerald-400 transition-colors">Showcase</a>
-        <a href="#cases" class="hover:text-emerald-400 transition-colors">Cases</a>
+        <a href="#overview" class="hover:text-emerald-400 transition-colors">{t.nav.overview}</a>
+        <a href="#showcase" class="hover:text-emerald-400 transition-colors">{t.nav.showcase}</a>
+        <a href="#cases" class="hover:text-emerald-400 transition-colors">{t.nav.cases}</a>
         <a href="https://www.linkedin.com/in/abay-syzdykov-ba4b75113" target="_blank" rel="noreferrer" class="text-emerald-400 hover:underline">LinkedIn</a>
-        <a href="#overview" class="hover:text-white transition-colors">&uarr; Back to Top</a>
+        <a href="#overview" class="hover:text-white transition-colors">{t.footer.backToTop}</a>
       </div>
 
     </div>

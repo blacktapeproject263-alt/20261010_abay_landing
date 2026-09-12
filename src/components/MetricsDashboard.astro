@@ -1,5 +1,14 @@
 ---
 // MetricsDashboard.astro
+import type { Locale } from '@/i18n/translations';
+import { translations } from '@/i18n/translations';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = translations[lang];
 ---
 
 <section id="showcase" class="py-20 bg-slate-950/60 relative border-y border-slate-800/80">
@@ -9,22 +18,22 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs uppercase tracking-wider mb-3">
-          Interactive Proof of Work
+          {t.metrics.badge}
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Executive Telemetry & SaaS Unit Economics
+          {t.metrics.title}
         </h2>
         <p class="text-slate-400 text-base mt-2 max-w-2xl">
-          Live embedded analytics engine displaying multi-cohort subscriber retention, MRR growth vectors, and unit economic health. Switch metrics and time horizons below.
+          {t.metrics.description}
         </p>
       </div>
 
       <!-- Controls: Time Range -->
       <div class="flex items-center gap-1.5 p-1.5 rounded-xl bg-slate-900 border border-slate-800 self-start md:self-auto">
-        <button type="button" data-range="7d" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">7D</button>
-        <button type="button" data-range="30d" class="time-range-btn active px-3 py-1.5 text-xs font-mono rounded-lg bg-emerald-500 text-slate-950 font-bold transition-colors cursor-pointer">30D</button>
-        <button type="button" data-range="90d" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">90D</button>
-        <button type="button" data-range="1y" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">1Y</button>
+        <button type="button" data-range="7d" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">{t.metrics.ranges['7d']}</button>
+        <button type="button" data-range="30d" class="time-range-btn active px-3 py-1.5 text-xs font-mono rounded-lg bg-emerald-500 text-slate-950 font-bold transition-colors cursor-pointer">{t.metrics.ranges['30d']}</button>
+        <button type="button" data-range="90d" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">{t.metrics.ranges['90d']}</button>
+        <button type="button" data-range="1y" class="time-range-btn px-3 py-1.5 text-xs font-mono rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">{t.metrics.ranges['1y']}</button>
       </div>
     </div>
 
@@ -32,38 +41,38 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
       
       <div class="p-5 rounded-2xl glass-panel relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
-        <div class="text-xs font-mono text-slate-400 mb-1">Monthly Recurring Revenue</div>
+        <div class="text-xs font-mono text-slate-400 mb-1">{t.metrics.kpis.mrr.label}</div>
         <div class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight" id="kpi-mrr">$148,500</div>
         <div class="flex items-center gap-1.5 mt-2 text-xs font-mono text-emerald-400">
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
-          <span>+18.4% MoM</span>
+          <span>{t.metrics.kpis.mrr.trend}</span>
         </div>
       </div>
 
       <div class="p-5 rounded-2xl glass-panel relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
-        <div class="text-xs font-mono text-slate-400 mb-1">Net Retention Rate (NRR)</div>
+        <div class="text-xs font-mono text-slate-400 mb-1">{t.metrics.kpis.nrr.label}</div>
         <div class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight" id="kpi-nrr">114.2%</div>
         <div class="flex items-center gap-1.5 mt-2 text-xs font-mono text-emerald-400">
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
-          <span>+3.1% YoY</span>
+          <span>{t.metrics.kpis.nrr.trend}</span>
         </div>
       </div>
 
       <div class="p-5 rounded-2xl glass-panel relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
-        <div class="text-xs font-mono text-slate-400 mb-1">Avg Customer LTV</div>
+        <div class="text-xs font-mono text-slate-400 mb-1">{t.metrics.kpis.ltv.label}</div>
         <div class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight" id="kpi-ltv">$3,820</div>
         <div class="flex items-center gap-1.5 mt-2 text-xs font-mono text-emerald-400">
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
-          <span>+12.6% vs Q1</span>
+          <span>{t.metrics.kpis.ltv.trend}</span>
         </div>
       </div>
 
       <div class="p-5 rounded-2xl glass-panel relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
-        <div class="text-xs font-mono text-slate-400 mb-1">LTV / CAC Efficiency</div>
+        <div class="text-xs font-mono text-slate-400 mb-1">{t.metrics.kpis.cac.label}</div>
         <div class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight" id="kpi-cac">4.8x</div>
         <div class="flex items-center gap-1.5 mt-2 text-xs font-mono text-emerald-400">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>Top-Decile Benchmark</span>
+          <span>{t.metrics.kpis.cac.trend}</span>
         </div>
       </div>
 
@@ -76,31 +85,35 @@
       <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
         <div class="flex flex-wrap gap-2">
           <button type="button" data-metric="revenue" class="metric-tab-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 transition-all cursor-pointer">
-            Revenue & ARR Growth
+            {t.metrics.tabs.revenue}
           </button>
           <button type="button" data-metric="retention" class="metric-tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
-            Cohort Retention Curve
+            {t.metrics.tabs.retention}
           </button>
           <button type="button" data-metric="ltv" class="metric-tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-slate-200 transition-all cursor-pointer">
-            LTV / Unit Economics
+            {t.metrics.tabs.ltv}
           </button>
         </div>
 
         <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Telemetry Source: Snowflake / dbt mart</span>
+          <span>{t.metrics.telemetrySource}</span>
         </div>
       </div>
 
       <!-- ECharts Canvas Container -->
-      <div class="relative w-full h-[380px] sm:h-[440px] pt-4" id="echarts-container">
+      <div 
+        class="relative w-full h-[380px] sm:h-[440px] pt-4" 
+        id="echarts-container"
+        data-chart-config={JSON.stringify(t.metrics.chartLabels)}
+      >
         <!-- Canvas is injected here by JS -->
       </div>
 
       <!-- Footer Info Strip -->
       <div class="mt-4 pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono gap-2">
-        <div>Model: Autoregressive Moving-Average (ARIMA) + Kaplan-Meier Cohort Analysis</div>
-        <div>Visual Engine: Apache ECharts 5.6</div>
+        <div>{t.metrics.modelInfo}</div>
+        <div>{t.metrics.visualEngine}</div>
       </div>
 
     </div>
@@ -115,73 +128,35 @@
   let currentMetric = 'revenue';
   let currentRange = '30d';
 
-  // Sample datasets for each metric and period
-  const dataSets: Record<string, Record<string, { dates: string[]; values: number[]; secondaryValues?: number[]; unit: string }>> = {
+  // Base raw values and units for each metric
+  const metricValues: Record<string, Record<string, { values: number[]; unit: string }>> = {
     revenue: {
-      '7d': {
-        dates: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        values: [138200, 140100, 142500, 144200, 146000, 147800, 148500],
-        unit: '$'
-      },
-      '30d': {
-        dates: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
-        values: [121000, 127500, 133200, 139000, 144500, 148500],
-        unit: '$'
-      },
-      '90d': {
-        dates: ['M1-W1', 'M1-W3', 'M2-W1', 'M2-W3', 'M3-W1', 'M3-W3'],
-        values: [102000, 110400, 122100, 131000, 141200, 148500],
-        unit: '$'
-      },
-      '1y': {
-        dates: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        values: [78000, 84000, 91000, 99500, 107000, 115000, 122000, 129000, 135000, 140000, 145000, 148500],
-        unit: '$'
-      }
+      '7d': { values: [138200, 140100, 142500, 144200, 146000, 147800, 148500], unit: '$' },
+      '30d': { values: [121000, 127500, 133200, 139000, 144500, 148500], unit: '$' },
+      '90d': { values: [102000, 110400, 122100, 131000, 141200, 148500], unit: '$' },
+      '1y': { values: [78000, 84000, 91000, 99500, 107000, 115000, 122000, 129000, 135000, 140000, 145000, 148500], unit: '$' }
     },
     retention: {
-      '7d': {
-        dates: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
-        values: [100, 86, 79, 74, 71, 68, 66],
-        unit: '%'
-      },
-      '30d': {
-        dates: ['Day 1', 'Day 5', 'Day 10', 'Day 15', 'Day 20', 'Day 25', 'Day 30'],
-        values: [100, 78, 69, 64, 61, 58, 56],
-        unit: '%'
-      },
-      '90d': {
-        dates: ['Month 0', 'Month 1', 'Month 2', 'Month 3'],
-        values: [100, 68, 57, 52],
-        unit: '%'
-      },
-      '1y': {
-        dates: ['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9', 'M10', 'M11', 'M12'],
-        values: [100, 72, 63, 58, 54, 51, 49, 47, 46, 45, 44, 43],
-        unit: '%'
-      }
+      '7d': { values: [100, 86, 79, 74, 71, 68, 66], unit: '%' },
+      '30d': { values: [100, 78, 69, 64, 61, 58, 56], unit: '%' },
+      '90d': { values: [100, 68, 57, 52], unit: '%' },
+      '1y': { values: [100, 72, 63, 58, 54, 51, 49, 47, 46, 45, 44, 43], unit: '%' }
     },
     ltv: {
-      '7d': {
-        dates: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        values: [3620, 3650, 3690, 3720, 3770, 3800, 3820],
-        unit: '$'
-      },
-      '30d': {
-        dates: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
-        values: [3200, 3340, 3480, 3600, 3720, 3820],
-        unit: '$'
-      },
-      '90d': {
-        dates: ['M1-W1', 'M1-W3', 'M2-W1', 'M2-W3', 'M3-W1', 'M3-W3'],
-        values: [2800, 3050, 3250, 3450, 3650, 3820],
-        unit: '$'
-      },
-      '1y': {
-        dates: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        values: [1950, 2100, 2300, 2500, 2750, 3000, 3200, 3400, 3550, 3680, 3750, 3820],
-        unit: '$'
-      }
+      '7d': { values: [3620, 3650, 3690, 3720, 3770, 3800, 3820], unit: '$' },
+      '30d': { values: [3200, 3340, 3480, 3600, 3720, 3820], unit: '$' },
+      '90d': { values: [2800, 3050, 3250, 3450, 3650, 3820], unit: '$' },
+      '1y': { values: [1950, 2100, 2300, 2500, 2750, 3000, 3200, 3400, 3550, 3680, 3750, 3820], unit: '$' }
+    }
+  };
+
+  const getChartConfig = () => {
+    const container = document.getElementById('echarts-container');
+    if (!container || !container.dataset.chartConfig) return null;
+    try {
+      return JSON.parse(container.dataset.chartConfig);
+    } catch (e) {
+      return null;
     }
   };
 
@@ -202,7 +177,19 @@
   const renderChart = (isDark: boolean) => {
     if (!chartInstance) return;
 
-    const data = dataSets[currentMetric][currentRange];
+    const metricData = metricValues[currentMetric][currentRange];
+    const chartConfig = getChartConfig();
+
+    const dates = (chartConfig && chartConfig.dates && chartConfig.dates[currentRange]) 
+      ? chartConfig.dates[currentRange] 
+      : ['1', '2', '3', '4', '5', '6', '7'];
+
+    const metricLabel = chartConfig ? (
+      currentMetric === 'revenue' ? chartConfig.revenueMetricName :
+      currentMetric === 'retention' ? chartConfig.retentionMetricName :
+      chartConfig.ltvMetricName
+    ) : currentMetric.toUpperCase();
+
     const textColor = isDark ? '#94a3b8' : '#64748b';
     const gridColor = isDark ? 'rgba(255, 255, 255, 0.07)' : 'rgba(0, 0, 0, 0.08)';
 
@@ -219,9 +206,9 @@
         },
         valueFormatter: (value) => {
           if (typeof value === 'number') {
-            return data.unit === '$' 
+            return metricData.unit === '$' 
               ? `$${value.toLocaleString()}` 
-              : `${value}${data.unit}`;
+              : `${value}${metricData.unit}`;
           }
           return String(value);
         }
@@ -236,7 +223,7 @@
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: data.dates,
+        data: dates,
         axisLine: { lineStyle: { color: gridColor } },
         axisLabel: {
           color: textColor,
@@ -253,19 +240,19 @@
           fontFamily: 'JetBrains Mono, monospace',
           fontSize: 11,
           formatter: (val: number) => {
-            if (data.unit === '$') {
+            if (metricData.unit === '$') {
               return val >= 1000 ? `$${val / 1000}k` : `$${val}`;
             }
-            return `${val}${data.unit}`;
+            return `${val}${metricData.unit}`;
           }
         }
       },
       series: [
         {
-          name: currentMetric.toUpperCase(),
+          name: metricLabel,
           type: 'line',
           smooth: 0.35,
-          data: data.values,
+          data: metricData.values,
           symbolSize: 7,
           showSymbol: false,
           itemStyle: {
