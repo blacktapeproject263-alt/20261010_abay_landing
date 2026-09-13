@@ -122,9 +122,23 @@ const t = translations[lang];
 </section>
 
 <script>
-  import * as echarts from 'echarts';
+  import * as echarts from 'echarts/core';
+  import { LineChart, type LineSeriesOption } from 'echarts/charts';
+  import {
+    TooltipComponent,
+    type TooltipComponentOption,
+    GridComponent,
+    type GridComponentOption
+  } from 'echarts/components';
+  import { CanvasRenderer } from 'echarts/renderers';
 
-  let chartInstance: echarts.ECharts | null = null;
+  echarts.use([LineChart, TooltipComponent, GridComponent, CanvasRenderer]);
+
+  type ECOption = echarts.ComposeOption<
+    LineSeriesOption | TooltipComponentOption | GridComponentOption
+  >;
+
+  let chartInstance: echarts.EChartsType | null = null;
   let currentMetric = 'revenue';
   let currentRange = '30d';
 
@@ -193,7 +207,7 @@ const t = translations[lang];
     const textColor = isDark ? '#94a3b8' : '#64748b';
     const gridColor = isDark ? 'rgba(255, 255, 255, 0.07)' : 'rgba(0, 0, 0, 0.08)';
 
-    const option: echarts.EChartsOption = {
+    const option: ECOption = {
       backgroundColor: 'transparent',
       tooltip: {
         trigger: 'axis',

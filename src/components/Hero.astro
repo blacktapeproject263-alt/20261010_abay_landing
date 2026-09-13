@@ -98,6 +98,8 @@ const t = translations[lang];
               <img 
                 src="/assets/hero-portrait.jpg" 
                 alt={`${t.hero.bioName} - ${t.hero.bioRole}`}
+                width="976"
+                height="1102"
                 class="w-full h-[440px] object-cover object-top filter contrast-[1.03] brightness-[0.98]"
                 loading="eager"
               />
@@ -109,7 +111,7 @@ const t = translations[lang];
               <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 border border-slate-700/70 backdrop-blur-md">
                 <div class="flex items-center justify-between">
                   <div>
-                    <h3 class="text-sm font-bold text-white tracking-wide">{t.hero.bioName}</h3>
+                    <div class="text-sm font-bold text-white tracking-wide">{t.hero.bioName}</div>
                     <p class="text-xs text-emerald-400 font-mono">{t.hero.bioRole}</p>
                   </div>
                   <div class="text-right">
