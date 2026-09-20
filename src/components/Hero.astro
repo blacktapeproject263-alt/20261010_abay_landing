@@ -74,11 +74,11 @@ const t = translations[lang];
         </div>
 
         <!-- Tech Stack Badges -->
-        <div class="pt-4 border-t border-slate-800/80">
-          <p class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3">{t.hero.toolingTitle}</p>
+        <div class="pt-4 border-t border-stroke-subtle">
+          <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-3">{t.hero.toolingTitle}</p>
           <div class="flex flex-wrap gap-2">
             {t.hero.tools.map((tool) => (
-              <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-slate-300 border border-slate-700/60">
+              <span class="px-3 py-1 rounded-lg text-xs font-mono bg-surface-card text-content-secondary border border-stroke-default">
                 {tool}
               </span>
             ))}

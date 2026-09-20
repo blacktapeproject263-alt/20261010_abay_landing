@@ -19,6 +19,7 @@ export interface Translations {
     overview: string;
     showcase: string;
     cases: string;
+    certs: string;
     skills: string;
     contact: string;
     bookCall: string;
@@ -114,6 +115,23 @@ export interface Translations {
       dashboardAnchor: string;
     }[];
   };
+  certifications: {
+    badge: string;
+    title: string;
+    description: string;
+    verifyBtn: string;
+    viewPlaygroundBtn: string;
+    items: {
+      id: string;
+      title: string;
+      issuer: string;
+      badgeText: string;
+      description: string;
+      skills: string[];
+      credentialUrl: string;
+      isPlayground?: boolean;
+    }[];
+  };
   skills: {
     badge: string;
     title: string;
@@ -188,6 +206,7 @@ export const translations: Record<Locale, Translations> = {
       overview: "Overview",
       showcase: "Live Showcase",
       cases: "Case Studies",
+      certs: "Certifications",
       skills: "Stack & Methods",
       contact: "Contact",
       bookCall: "Book a Call",
@@ -328,6 +347,43 @@ export const translations: Record<Locale, Translations> = {
         }
       ]
     },
+    certifications: {
+      badge: "Verified Qualifications & Sandboxes",
+      title: "Industry Certifications & Interactive Showcases",
+      description: "Rigorous vendor certifications and verifiable technical sandboxes demonstrating enterprise data modeling, cloud engineering, and decision-support systems.",
+      verifyBtn: "Verify Credential →",
+      viewPlaygroundBtn: "Launch Interactive Showcase →",
+      items: [
+        {
+          id: "pl-300",
+          title: "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
+          issuer: "Microsoft",
+          badgeText: "Official Certification",
+          description: "Demonstrated expertise in enterprise BI architecture, advanced DAX modeling, star-schema dimensional design, row-level security (RLS), and Microsoft Fabric / Power BI Service workspace administration.",
+          skills: ["Advanced DAX", "Star Schema", "Power BI Service", "Microsoft Fabric", "RLS Security"],
+          credentialUrl: "https://learn.microsoft.com/credentials/certifications/data-analyst-associate/"
+        },
+        {
+          id: "dbt-mds",
+          title: "dbt & Modern Data Stack Specialist",
+          issuer: "dbt Labs & Snowflake Ecosystem",
+          badgeText: "Verified Competency",
+          description: "Production mastery in building modular, version-controlled ELT data pipelines, Snowflake warehouse optimization, automated schema testing, documentation generation, and star-schema data mart engineering.",
+          skills: ["dbt Core/Cloud", "Snowflake", "Data Marts", "Schema Testing", "CI/CD Data Ops"],
+          credentialUrl: "https://www.getdbt.com/"
+        },
+        {
+          id: "echarts-sandbox",
+          title: "Interactive ECharts / Analytical Playground",
+          issuer: "Live Telemetry Sandbox",
+          badgeText: "Live Sandbox",
+          description: "High-performance client-side interactive telemetry engine built with Apache ECharts. Simulates multi-cohort retention decay curves, MRR growth vectors, and dynamic unit economics with sub-second recalculation.",
+          skills: ["Apache ECharts", "Cohort Retention Simulation", "Unit Economics", "Interactive Telemetry"],
+          credentialUrl: "#showcase",
+          isPlayground: true
+        }
+      ]
+    },
     skills: {
       badge: "Capabilities & Methodology",
       title: "Engineered for Analytical Rigor",
@@ -437,6 +493,7 @@ export const translations: Record<Locale, Translations> = {
       overview: "Обзор",
       showcase: "Дашборд",
       cases: "Кейсы",
+      certs: "Сертификаты",
       skills: "Стек и методы",
       contact: "Контакты",
       bookCall: "Забронировать звонок",
@@ -577,6 +634,43 @@ export const translations: Record<Locale, Translations> = {
         }
       ]
     },
+    certifications: {
+      badge: "Подтвержденная квалификация и песочницы",
+      title: "Профессиональные сертификаты и интерактивные шоукейсы",
+      description: "Официальные вендорские сертификации и верифицируемые технические демонстрационные стенды, подтверждающие высокий уровень проектирования хранилищ, моделирования данных и разработки BI-систем.",
+      verifyBtn: "Проверить сертификат →",
+      viewPlaygroundBtn: "Открыть интерактивный стенд →",
+      items: [
+        {
+          id: "pl-300",
+          title: "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
+          issuer: "Microsoft",
+          badgeText: "Официальная сертификация",
+          description: "Подтвержденные компетенции в корпоративной архитектуре BI: разработка сложных мер на DAX, проектирование реляционных схем 'звезда', настройка безопасности RLS и администрирование рабочих областей Power BI Service / Microsoft Fabric.",
+          skills: ["Advanced DAX", "Схема 'Звезда'", "Power BI Service", "Microsoft Fabric", "Безопасность RLS"],
+          credentialUrl: "https://learn.microsoft.com/credentials/certifications/data-analyst-associate/"
+        },
+        {
+          id: "dbt-mds",
+          title: "dbt & Modern Data Stack Specialist",
+          issuer: "dbt Labs & Snowflake Ecosystem",
+          badgeText: "Подтвержденная квалификация",
+          description: "Промышленный опыт построения модульных ELT-пайплайнов с версионированием кода, оптимизация хранилищ Snowflake, автоматизированное тестирование качества данных (Data Quality Tests) и построение витрин данных.",
+          skills: ["dbt Core/Cloud", "Snowflake", "Витрины данных", "Тесты данных", "DataOps"],
+          credentialUrl: "https://www.getdbt.com/"
+        },
+        {
+          id: "echarts-sandbox",
+          title: "Interactive ECharts / Analytical Playground",
+          issuer: "Песочница живой телеметрии",
+          badgeText: "Интерактивный стенд",
+          description: "Высокопроизводительный аналитический движок на Apache ECharts с мгновенным откликом: динамическое моделирование когортного оттока, векторов роста MRR и расчет юнит-экономики при смене временных горизонтов.",
+          skills: ["Apache ECharts", "Когортный анализ оттока", "Юнит-экономика", "Интерактивная телеметрия"],
+          credentialUrl: "#showcase",
+          isPlayground: true
+        }
+      ]
+    },
     skills: {
       badge: "Компетенции и методология",
       title: "Инженерный подход и аналитическая строгость",
@@ -686,6 +780,7 @@ export const translations: Record<Locale, Translations> = {
       overview: "Шолу",
       showcase: "Дашборд",
       cases: "Кейстер",
+      certs: "Сертификаттар",
       skills: "Стек пен әдістер",
       contact: "Байланыс",
       bookCall: "Қоңырау белгілеу",
@@ -823,6 +918,43 @@ export const translations: Record<Locale, Translations> = {
           techStack: ["PostgreSQL", "Python (Prophet/Statsmodels)", "Автоматтандырылған ETL", "ECharts", "Metabase"],
           githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
           dashboardAnchor: "#showcase"
+        }
+      ]
+    },
+    certifications: {
+      badge: "Расталған біліктілік пен сынақ алаңдары",
+      title: "Кәсіби сертификаттар және интерактивті шоукейстер",
+      description: "Дерекқорларды жобалау, бұлтты инженерия және басқарушылық BI-жүйелерін құру бойынша ресми халықаралық сертификаттар мен интерактивті сынақ алаңдары.",
+      verifyBtn: "Сертификатты тексеру →",
+      viewPlaygroundBtn: "Интерактивті стендті ашу →",
+      items: [
+        {
+          id: "pl-300",
+          title: "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
+          issuer: "Microsoft",
+          badgeText: "Ресми сертификаттау",
+          description: "Корпоративтік BI архитектурасы бойынша расталған сараптама: күрделі DAX есептеулері, 'жұлдыз' сұлбасымен реляциялық өлшемдік модельдеу, RLS деңгейлік қауіпсіздігі және Microsoft Fabric / Power BI Service әкімшілендіру.",
+          skills: ["Advanced DAX", "'Жұлдыз' сұлбасы", "Power BI Service", "Microsoft Fabric", "RLS қауіпсіздігі"],
+          credentialUrl: "https://learn.microsoft.com/credentials/certifications/data-analyst-associate/"
+        },
+        {
+          id: "dbt-mds",
+          title: "dbt & Modern Data Stack Specialist",
+          issuer: "dbt Labs & Snowflake Ecosystem",
+          badgeText: "Расталған біліктілік",
+          description: "Модульдік нұсқаланған ELT деректер құбырларын құру, Snowflake қоймаларын оңтайландыру, деректер сапасын автоматты тестілеу (Data Quality Tests) және деректер витриналарын жобалау.",
+          skills: ["dbt Core/Cloud", "Snowflake", "Деректер витриналары", "Сапа сынақтары", "DataOps"],
+          credentialUrl: "https://www.getdbt.com/"
+        },
+        {
+          id: "echarts-sandbox",
+          title: "Interactive ECharts / Analytical Playground",
+          issuer: "Тікелей телеметрия сынақ алаңы",
+          badgeText: "Интерактивті стенд",
+          description: "Apache ECharts негізінде жасалған өнімділігі жоғары талдау қозғалтқышы: когорталардың кету қисықтарын (churn), MRR өсу динамикасын және юнит-экономика көрсеткіштерін нақты уақытта модельдеу мүмкіндігі.",
+          skills: ["Apache ECharts", "Когорталық талдау", "Юнит-экономика", "Интерактивті телеметрия"],
+          credentialUrl: "#showcase",
+          isPlayground: true
         }
       ]
     },

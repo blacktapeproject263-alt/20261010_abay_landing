@@ -1,0 +1,130 @@
+---
+// src/components/Certifications.astro
+import type { Locale } from '@/i18n/translations';
+import { translations } from '@/i18n/translations';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = translations[lang];
+---
+
+<section id="certifications" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/25 text-brand-primary font-mono text-xs uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse"></span>
+        <span>{t.certifications.badge}</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-content-primary tracking-tight">
+        {t.certifications.title}
+      </h2>
+      <p class="text-content-secondary text-lg leading-relaxed">
+        {t.certifications.description}
+      </p>
+    </div>
+
+    <!-- 3 Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {t.certifications.items.map((item) => (
+        <article class="rounded-3xl glass-panel p-8 border border-stroke-default hover:border-brand-primary/50 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden bg-surface-card hover:-translate-y-1 shadow-lg">
+          
+          <!-- Top Tag & Issuer -->
+          <div>
+            <div class="flex items-center justify-between gap-2 pb-6 border-b border-stroke-subtle">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-surface-overlay text-content-secondary border border-stroke-subtle">
+                {item.issuer}
+              </span>
+              <span class:list={[
+                "px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider border",
+                item.isPlayground 
+                  ? "bg-brand-accent/15 text-brand-accent border-brand-accent/30" 
+                  : "bg-brand-emerald/15 text-brand-emerald border-brand-emerald/30"
+              ]}>
+                {item.badgeText}
+              </span>
+            </div>
+
+            <!-- Card Header & Title -->
+            <div class="mt-6 mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-surface-overlay border border-stroke-default flex items-center justify-center mb-5 text-brand-primary group-hover:scale-105 transition-transform duration-300">
+                {item.id === 'pl-300' && (
+                  <svg class="w-6 h-6 text-brand-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                )}
+                {item.id === 'dbt-mds' && (
+                  <svg class="w-6 h-6 text-brand-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                  </svg>
+                )}
+                {item.id === 'echarts-sandbox' && (
+                  <svg class="w-6 h-6 text-brand-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                  </svg>
+                )}
+              </div>
+
+              <h3 class="text-xl font-bold text-content-primary tracking-tight leading-snug">
+                {item.title}
+              </h3>
+            </div>
+
+            <!-- Description -->
+            <p class="text-content-secondary text-sm leading-relaxed mb-6">
+              {item.description}
+            </p>
+
+            <!-- Skills Pills -->
+            <div class="flex flex-wrap gap-2 mb-8">
+              {item.skills.map((skill) => (
+                <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-surface-overlay text-content-secondary border border-stroke-subtle">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Bottom Action Button -->
+          <div class="pt-4 border-t border-stroke-subtle">
+            {item.isPlayground ? (
+              <a
+                href={item.credentialUrl}
+                class="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-brand-primary/15 text-brand-primary hover:bg-brand-primary hover:text-white font-semibold text-sm transition-all duration-200 border border-brand-primary/30 cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+              >
+                <span>{t.certifications.viewPlaygroundBtn}</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            ) : (
+              <a
+                href={item.credentialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-surface-overlay hover:bg-surface-elevated text-content-primary font-semibold text-sm transition-all duration-200 border border-stroke-default hover:border-brand-primary/50 cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+              >
+                <span>{t.certifications.verifyBtn}</span>
+                <svg class="w-4 h-4 text-brand-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            )}
+          </div>
+
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

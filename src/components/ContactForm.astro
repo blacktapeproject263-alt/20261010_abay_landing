@@ -91,7 +91,7 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || "1x00000000000000
       </aside>
 
       <!-- Secure Contact Form -->
-      <div class="lg:col-span-7 rounded-3xl glass-panel p-8 sm:p-10 border border-slate-800 relative">
+      <div class="lg:col-span-7 rounded-3xl glass-panel p-8 sm:p-10 border border-stroke-default relative">
         <form 
           id="contact-form" 
           class="space-y-6"
@@ -113,7 +113,7 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || "1x00000000000000
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <!-- Name -->
             <div class="space-y-2">
-              <label for="contact-name" class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">
+              <label for="contact-name" class="block text-xs font-mono uppercase tracking-wider text-content-secondary font-semibold">
                 {t.contact.form.nameLabel} <span class="text-emerald-400">*</span>
               </label>
               <input
@@ -122,13 +122,13 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || "1x00000000000000
                 name="name"
                 required
                 placeholder={t.contact.form.namePlaceholder}
-                class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
+                class="w-full px-4 py-3 rounded-xl bg-surface-elevated border border-stroke-default text-content-primary placeholder:text-content-muted focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm"
               />
             </div>
 
             <!-- Email -->
             <div class="space-y-2">
-              <label for="contact-email" class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">
+              <label for="contact-email" class="block text-xs font-mono uppercase tracking-wider text-content-secondary font-semibold">
                 {t.contact.form.emailLabel} <span class="text-emerald-400">*</span>
               </label>
               <input
@@ -137,14 +137,14 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || "1x00000000000000
                 name="email"
                 required
                 placeholder={t.contact.form.emailPlaceholder}
-                class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
+                class="w-full px-4 py-3 rounded-xl bg-surface-elevated border border-stroke-default text-content-primary placeholder:text-content-muted focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm"
               />
             </div>
           </div>
 
           <!-- Message -->
           <div class="space-y-2">
-            <label for="contact-message" class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">
+            <label for="contact-message" class="block text-xs font-mono uppercase tracking-wider text-content-secondary font-semibold">
               {t.contact.form.messageLabel} <span class="text-emerald-400">*</span>
             </label>
             <textarea
@@ -153,7 +153,7 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || "1x00000000000000
               rows="5"
               required
               placeholder={t.contact.form.messagePlaceholder}
-              class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm resize-none"
+              class="w-full px-4 py-3 rounded-xl bg-surface-elevated border border-stroke-default text-content-primary placeholder:text-content-muted focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm resize-none"
             ></textarea>
           </div>
 

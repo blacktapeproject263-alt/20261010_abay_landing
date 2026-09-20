@@ -1,11 +1,35 @@
 @import "tailwindcss";
 
+@theme {
+  /* Surface Elevation */
+  --color-surface-base: #0b0f19;
+  --color-surface-elevated: #111827;
+  --color-surface-card: #161f33;
+  --color-surface-overlay: #1e293b;
+
+  /* WCAG 2.1 AA/AAA Typography */
+  --color-content-primary: #f8fafc;   /* 95% White, contrast > 15:1 */
+  --color-content-secondary: #cbd5e1; /* Slate-300, contrast > 8.5:1 */
+  --color-content-muted: #94a3b8;     /* Slate-400, contrast > 5.4:1 */
+
+  /* Component Borders */
+  --color-stroke-subtle: rgba(148, 163, 184, 0.12);
+  --color-stroke-default: rgba(148, 163, 184, 0.25);
+  --color-stroke-strong: #334155;
+
+  /* Brand Accents */
+  --color-brand-primary: #3b82f6;
+  --color-brand-accent: #6366f1;
+  --color-brand-emerald: #10b981;
+}
+
 @layer base {
   :root {
-    --bg-primary: #090d16;
-    --bg-secondary: #0f172a;
-    --bg-card: rgba(15, 23, 42, 0.75);
-    --border-subtle: rgba(255, 255, 255, 0.08);
+    --bg-primary: #0b0f19;
+    --bg-secondary: #111827;
+    --bg-card: rgba(22, 31, 51, 0.75);
+    --border-subtle: rgba(148, 163, 184, 0.12);
+    --border-default: rgba(148, 163, 184, 0.25);
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --accent: #10b981;
@@ -17,6 +41,7 @@
     --bg-secondary: #ffffff;
     --bg-card: rgba(255, 255, 255, 0.85);
     --border-subtle: rgba(15, 23, 42, 0.08);
+    --border-default: rgba(15, 23, 42, 0.15);
     --text-main: #0f172a;
     --text-muted: #64748b;
     --accent: #059669;
@@ -42,11 +67,11 @@
   background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-default);
 }
 
 .glass-header {
-  background: rgba(9, 13, 22, 0.82);
+  background: rgba(11, 15, 25, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);

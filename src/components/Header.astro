@@ -34,26 +34,27 @@ const getLocalePath = (targetLocale: Locale) => {
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
       <a href="#overview" class="hover:text-emerald-400 transition-colors">{t.nav.overview}</a>
       <a href="#showcase" class="hover:text-emerald-400 transition-colors">{t.nav.showcase}</a>
       <a href="#cases" class="hover:text-emerald-400 transition-colors">{t.nav.cases}</a>
+      <a href="#certifications" class="hover:text-emerald-400 transition-colors">{t.nav.certs}</a>
       <a href="#skills" class="hover:text-emerald-400 transition-colors">{t.nav.skills}</a>
       <a href="#contact" class="hover:text-emerald-400 transition-colors">{t.nav.contact}</a>
     </nav>
 
     <!-- Actions: Language Switcher, Theme Switcher & Cal.com Trigger -->
     <div class="flex items-center gap-2.5 sm:gap-3">
-      <!-- Language Switcher: EN | РУС | ҚАЗ -->
-      <nav aria-label="Language selector" class="inline-flex items-center p-1 rounded-xl bg-slate-900/90 border border-slate-700/80 font-mono text-xs shadow-inner">
+      <!-- Language Switcher: EN | РУС | ҚАЗ (Desktop Compact) -->
+      <nav aria-label="Language selector" class="inline-flex items-center p-1 rounded-xl bg-surface-card border border-stroke-default font-mono text-xs shadow-inner">
         {locales.map((l) => (
           <a
             href={getLocalePath(l)}
             class:list={[
-              "px-2.5 py-1 rounded-lg text-xs font-semibold transition-all duration-200",
+              "px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center justify-center transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none relative after:absolute after:-inset-1",
               lang === l 
-                ? "bg-emerald-500 text-slate-950 font-bold shadow-[0_0_12px_rgba(16,185,129,0.35)]" 
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
+                ? "bg-brand-primary text-white font-bold shadow-sm" 
+                : "text-content-muted hover:text-content-primary hover:bg-surface-overlay"
             ]}
             aria-current={lang === l ? "page" : undefined}
           >
@@ -108,19 +109,19 @@ const getLocalePath = (targetLocale: Locale) => {
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-[#090d16]/95 backdrop-blur-xl px-4 pt-4 pb-6 space-y-3">
-    <!-- Mobile Lang Switcher -->
-    <div class="flex items-center justify-between pb-3 border-b border-white/10">
-      <span class="text-xs font-mono uppercase text-slate-400">Language</span>
-      <div class="inline-flex items-center p-1 rounded-xl bg-slate-900 border border-slate-700 font-mono text-xs">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-stroke-subtle bg-surface-base/95 backdrop-blur-xl px-4 pt-4 pb-6 space-y-3">
+    <!-- Mobile Lang Switcher (WCAG 44x44px touch target) -->
+    <div class="flex items-center justify-between pb-3 border-b border-stroke-subtle">
+      <span class="text-xs font-mono uppercase text-content-muted">Language</span>
+      <div class="inline-flex items-center p-1 rounded-xl bg-surface-card border border-stroke-default font-mono text-xs gap-1">
         {locales.map((l) => (
           <a
             href={getLocalePath(l)}
             class:list={[
-              "px-3 py-1 rounded-lg text-xs font-semibold transition-all",
+              "min-h-[44px] min-w-[44px] px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-center transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none",
               lang === l 
-                ? "bg-emerald-500 text-slate-950 font-bold shadow-[0_0_10px_rgba(16,185,129,0.3)]" 
-                : "text-slate-400 hover:text-white"
+                ? "bg-brand-primary text-white font-bold shadow-md" 
+                : "text-content-muted hover:text-content-primary hover:bg-surface-overlay"
             ]}
           >
             {localeNames[l]}
@@ -132,6 +133,7 @@ const getLocalePath = (targetLocale: Locale) => {
     <a href="#overview" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.overview}</a>
     <a href="#showcase" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.showcase}</a>
     <a href="#cases" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.cases}</a>
+    <a href="#certifications" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.certs}</a>
     <a href="#skills" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.skills}</a>
     <a href="#contact" class="block py-2 text-base font-medium text-slate-300 hover:text-emerald-400">{t.nav.contact}</a>
     <button
