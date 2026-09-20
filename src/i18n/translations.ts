@@ -120,6 +120,7 @@ export interface Translations {
     title: string;
     description: string;
     verifyBtn: string;
+    pdfBtn: string;
     viewPlaygroundBtn: string;
     items: {
       id: string;
@@ -352,6 +353,7 @@ export const translations: Record<Locale, Translations> = {
       title: "Industry Certifications & Interactive Showcases",
       description: "Rigorous vendor certifications and verifiable technical sandboxes demonstrating enterprise data modeling, cloud engineering, and decision-support systems.",
       verifyBtn: "Verify Credential →",
+      pdfBtn: "View Certificate (PDF) →",
       viewPlaygroundBtn: "Launch Interactive Showcase →",
       items: [
         {
@@ -371,6 +373,15 @@ export const translations: Record<Locale, Translations> = {
           description: "Production mastery in building modular, version-controlled ELT data pipelines, Snowflake warehouse optimization, automated schema testing, documentation generation, and star-schema data mart engineering.",
           skills: ["dbt Core/Cloud", "Snowflake", "Data Marts", "Schema Testing", "CI/CD Data Ops"],
           credentialUrl: "https://www.getdbt.com/"
+        },
+        {
+          id: "python-data-analysis",
+          title: "Python Data Analysis (NASBA Accredited)",
+          issuer: "LinkedIn Learning & NASBA",
+          badgeText: "Verified Certificate",
+          description: "Accredited technical certification covering end-to-end data analysis, statistical data analysis, hypothesis testing, and quantitative modeling with Python (CPE Credit: 6.60, Certificate ID: e21ebcce0a232da0...).",
+          skills: ["Data Analysis", "Statistical Analysis", "Python", "NASBA CPE #140940"],
+          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "echarts-sandbox",
@@ -639,6 +650,7 @@ export const translations: Record<Locale, Translations> = {
       title: "Профессиональные сертификаты и интерактивные шоукейсы",
       description: "Официальные вендорские сертификации и верифицируемые технические демонстрационные стенды, подтверждающие высокий уровень проектирования хранилищ, моделирования данных и разработки BI-систем.",
       verifyBtn: "Проверить сертификат →",
+      pdfBtn: "Смотреть сертификат (PDF) →",
       viewPlaygroundBtn: "Открыть интерактивный стенд →",
       items: [
         {
@@ -658,6 +670,15 @@ export const translations: Record<Locale, Translations> = {
           description: "Промышленный опыт построения модульных ELT-пайплайнов с версионированием кода, оптимизация хранилищ Snowflake, автоматизированное тестирование качества данных (Data Quality Tests) и построение витрин данных.",
           skills: ["dbt Core/Cloud", "Snowflake", "Витрины данных", "Тесты данных", "DataOps"],
           credentialUrl: "https://www.getdbt.com/"
+        },
+        {
+          id: "python-data-analysis",
+          title: "Python Data Analysis (Аккредитация NASBA)",
+          issuer: "LinkedIn Learning & NASBA",
+          badgeText: "Верифицированный сертификат",
+          description: "Аккредитованная профессиональная программа по полному циклу анализа данных на Python: разведочный и статистический анализ, проверка гипотез и квантитативное моделирование (6.60 CPE кредитов, Certificate ID: e21ebcce0a232da0...).",
+          skills: ["Анализ данных", "Статистический анализ", "Python", "NASBA CPE #140940"],
+          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "echarts-sandbox",
@@ -926,6 +947,7 @@ export const translations: Record<Locale, Translations> = {
       title: "Кәсіби сертификаттар және интерактивті шоукейстер",
       description: "Дерекқорларды жобалау, бұлтты инженерия және басқарушылық BI-жүйелерін құру бойынша ресми халықаралық сертификаттар мен интерактивті сынақ алаңдары.",
       verifyBtn: "Сертификатты тексеру →",
+      pdfBtn: "Сертификатты көру (PDF) →",
       viewPlaygroundBtn: "Интерактивті стендті ашу →",
       items: [
         {
@@ -945,6 +967,15 @@ export const translations: Record<Locale, Translations> = {
           description: "Модульдік нұсқаланған ELT деректер құбырларын құру, Snowflake қоймаларын оңтайландыру, деректер сапасын автоматты тестілеу (Data Quality Tests) және деректер витриналарын жобалау.",
           skills: ["dbt Core/Cloud", "Snowflake", "Деректер витриналары", "Сапа сынақтары", "DataOps"],
           credentialUrl: "https://www.getdbt.com/"
+        },
+        {
+          id: "python-data-analysis",
+          title: "Python Data Analysis (NASBA аккредитациясы)",
+          issuer: "LinkedIn Learning & NASBA",
+          badgeText: "Расталған сертификат",
+          description: "Python тілінде деректерді талдаудың толық циклі бойынша аккредиттелген кәсіби бағдарлама: барлау және статистикалық талдау, гипотезаларды тексеру және сандық модельдеу (6.60 CPE кредиттері, Certificate ID: e21ebcce0a232da0...).",
+          skills: ["Деректерді талдау", "Статистикалық талдау", "Python", "NASBA CPE #140940"],
+          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "echarts-sandbox",
