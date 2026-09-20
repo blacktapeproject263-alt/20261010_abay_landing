@@ -22,8 +22,6 @@ export interface Translations {
     certs: string;
     skills: string;
     contact: string;
-    bookCall: string;
-    bookCallShort: string;
   };
   hero: {
     availableBadge: string;
@@ -33,7 +31,7 @@ export interface Translations {
     bioName: string;
     bioRole: string;
     bioBody: string;
-    bookCallBtn: string;
+    contactBtn: string;
     downloadCvBtn: string;
     cvFileName: string;
     toolingTitle: string;
@@ -165,9 +163,6 @@ export interface Translations {
       locationValue: string;
       networkLabel: string;
       networkLink: string;
-      callCardTitle: string;
-      callCardDesc: string;
-      callCardBtn: string;
     };
     form: {
       nameLabel: string;
@@ -184,11 +179,6 @@ export interface Translations {
       networkError: string;
       requiredFieldsError: string;
     };
-  };
-  calModal: {
-    title: string;
-    desc: string;
-    openTabBtn: string;
   };
   footer: {
     rights: string;
@@ -209,9 +199,7 @@ export const translations: Record<Locale, Translations> = {
       cases: "Case Studies",
       certs: "Certifications",
       skills: "Stack & Methods",
-      contact: "Contact",
-      bookCall: "Book a Call",
-      bookCallShort: "Book a 15-min Call"
+      contact: "Contact"
     },
     hero: {
       availableBadge: "AVAILABLE FOR NEW ENGAGEMENTS",
@@ -221,7 +209,7 @@ export const translations: Record<Locale, Translations> = {
       bioName: "Abay Syzdykov",
       bioRole: "Data Analyst & BI Specialist",
       bioBody: ". I architect automated reporting engines, multi-touch attribution pipelines, and predictive churn models that bridge technical data infrastructure with C-suite commercial decisions.",
-      bookCallBtn: "Book a 15-min Discovery Call",
+      contactBtn: "Discuss a Project",
       downloadCvBtn: "Download CV (PDF)",
       cvFileName: "Abay_Syzdykov_Data_Analyst_CV.pdf",
       toolingTitle: "Core Tooling & Competencies",
@@ -357,13 +345,13 @@ export const translations: Record<Locale, Translations> = {
       viewPlaygroundBtn: "Launch Interactive Showcase →",
       items: [
         {
-          id: "pl-300",
-          title: "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
-          issuer: "Microsoft",
-          badgeText: "Official Certification",
-          description: "Demonstrated expertise in enterprise BI architecture, advanced DAX modeling, star-schema dimensional design, row-level security (RLS), and Microsoft Fabric / Power BI Service workspace administration.",
-          skills: ["Advanced DAX", "Star Schema", "Power BI Service", "Microsoft Fabric", "RLS Security"],
-          credentialUrl: "https://learn.microsoft.com/credentials/certifications/data-analyst-associate/"
+          id: "python-data-analysis",
+          title: "Python Data Analysis (NASBA Accredited)",
+          issuer: "LinkedIn Learning & NASBA",
+          badgeText: "Verified Certificate",
+          description: "Accredited technical certification covering end-to-end data analysis, statistical data analysis, hypothesis testing, and quantitative modeling with Python (CPE Credit: 6.60, Certificate ID: e21ebcce0a232da0...).",
+          skills: ["Data Analysis", "Statistical Analysis", "Python", "NASBA CPE #140940"],
+          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "dbt-mds",
@@ -373,15 +361,6 @@ export const translations: Record<Locale, Translations> = {
           description: "Production mastery in building modular, version-controlled ELT data pipelines, Snowflake warehouse optimization, automated schema testing, documentation generation, and star-schema data mart engineering.",
           skills: ["dbt Core/Cloud", "Snowflake", "Data Marts", "Schema Testing", "CI/CD Data Ops"],
           credentialUrl: "https://www.getdbt.com/"
-        },
-        {
-          id: "python-data-analysis",
-          title: "Python Data Analysis (NASBA Accredited)",
-          issuer: "LinkedIn Learning & NASBA",
-          badgeText: "Verified Certificate",
-          description: "Accredited technical certification covering end-to-end data analysis, statistical data analysis, hypothesis testing, and quantitative modeling with Python (CPE Credit: 6.60, Certificate ID: e21ebcce0a232da0...).",
-          skills: ["Data Analysis", "Statistical Analysis", "Python", "NASBA CPE #140940"],
-          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "echarts-sandbox",
@@ -463,10 +442,7 @@ export const translations: Record<Locale, Translations> = {
         locationLabel: "Location & Timezone",
         locationValue: "Remote (UTC+5 / Flexible EMEA & US)",
         networkLabel: "Professional Network",
-        networkLink: "LinkedIn Profile →",
-        callCardTitle: "Prefer an interactive conversation?",
-        callCardDesc: "Skip email ping-pong and schedule a direct 15-minute video consultation.",
-        callCardBtn: "Open Discovery Scheduler"
+        networkLink: "LinkedIn Profile →"
       },
       form: {
         nameLabel: "Your Full Name",
@@ -483,11 +459,6 @@ export const translations: Record<Locale, Translations> = {
         networkError: "Network transmission error. Please verify your connection or reach out on LinkedIn.",
         requiredFieldsError: "Please fill out all required fields."
       }
-    },
-    calModal: {
-      title: "Book a 15-Minute Discovery Call",
-      desc: "Select a date and time that fits your timezone for an initial scoping call with Abay Syzdykov.",
-      openTabBtn: "Open Cal.com Scheduler in New Tab"
     },
     footer: {
       rights: "All rights reserved. Data Analyst & BI Specialist.",
@@ -506,9 +477,7 @@ export const translations: Record<Locale, Translations> = {
       cases: "Кейсы",
       certs: "Сертификаты",
       skills: "Стек и методы",
-      contact: "Контакты",
-      bookCall: "Забронировать звонок",
-      bookCallShort: "Забронировать 15-мин звонок"
+      contact: "Контакты"
     },
     hero: {
       availableBadge: "ОТКРЫТ ДЛЯ НОВЫХ ПРОЕКТОВ",
@@ -518,7 +487,7 @@ export const translations: Record<Locale, Translations> = {
       bioName: "Абай Сыздыков",
       bioRole: "аналитик данных и BI-специалист",
       bioBody: ". Я проектирую автоматизированные аналитические платформы, пайплайны сквозной атрибуции и прогнозные модели оттока, связывая инженерную инфраструктуру данных со стратегическими бизнес-решениями руководства.",
-      bookCallBtn: "Забронировать 15-мин звонок",
+      contactBtn: "Обсудить проект",
       downloadCvBtn: "Скачать резюме (PDF)",
       cvFileName: "Abay_Syzdykov_Data_Analyst_CV.pdf",
       toolingTitle: "Ключевые компетенции и стек",
@@ -654,13 +623,13 @@ export const translations: Record<Locale, Translations> = {
       viewPlaygroundBtn: "Открыть интерактивный стенд →",
       items: [
         {
-          id: "pl-300",
-          title: "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
-          issuer: "Microsoft",
-          badgeText: "Официальная сертификация",
-          description: "Подтвержденные компетенции в корпоративной архитектуре BI: разработка сложных мер на DAX, проектирование реляционных схем 'звезда', настройка безопасности RLS и администрирование рабочих областей Power BI Service / Microsoft Fabric.",
-          skills: ["Advanced DAX", "Схема 'Звезда'", "Power BI Service", "Microsoft Fabric", "Безопасность RLS"],
-          credentialUrl: "https://learn.microsoft.com/credentials/certifications/data-analyst-associate/"
+          id: "python-data-analysis",
+          title: "Python Data Analysis (Аккредитация NASBA)",
+          issuer: "LinkedIn Learning & NASBA",
+          badgeText: "Верифицированный сертификат",
+          description: "Аккредитованная профессиональная программа по полному циклу анализа данных на Python: разведочный и статистический анализ, проверка гипотез и квантитативное моделирование (6.60 CPE кредитов, Certificate ID: e21ebcce0a232da0...).",
+          skills: ["Анализ данных", "Статистический анализ", "Python", "NASBA CPE #140940"],
+          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "dbt-mds",
@@ -670,15 +639,6 @@ export const translations: Record<Locale, Translations> = {
           description: "Промышленный опыт построения модульных ELT-пайплайнов с версионированием кода, оптимизация хранилищ Snowflake, автоматизированное тестирование качества данных (Data Quality Tests) и построение витрин данных.",
           skills: ["dbt Core/Cloud", "Snowflake", "Витрины данных", "Тесты данных", "DataOps"],
           credentialUrl: "https://www.getdbt.com/"
-        },
-        {
-          id: "python-data-analysis",
-          title: "Python Data Analysis (Аккредитация NASBA)",
-          issuer: "LinkedIn Learning & NASBA",
-          badgeText: "Верифицированный сертификат",
-          description: "Аккредитованная профессиональная программа по полному циклу анализа данных на Python: разведочный и статистический анализ, проверка гипотез и квантитативное моделирование (6.60 CPE кредитов, Certificate ID: e21ebcce0a232da0...).",
-          skills: ["Анализ данных", "Статистический анализ", "Python", "NASBA CPE #140940"],
-          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "echarts-sandbox",
@@ -760,10 +720,7 @@ export const translations: Record<Locale, Translations> = {
         locationLabel: "Локация и часовой пояс",
         locationValue: "Удаленно (UTC+5 / Гибкий график под EMEA и US)",
         networkLabel: "Профессиональная сеть",
-        networkLink: "Профиль в LinkedIn →",
-        callCardTitle: "Предпочитаете живой диалог?",
-        callCardDesc: "Без долгой переписки: выберите удобное время для 15-минутной онлайн-консультации.",
-        callCardBtn: "Открыть календарь встреч"
+        networkLink: "Профиль в LinkedIn →"
       },
       form: {
         nameLabel: "Ваше имя и фамилия",
@@ -780,11 +737,6 @@ export const translations: Record<Locale, Translations> = {
         networkError: "Сетевая ошибка при передаче. Пожалуйста, проверьте подключение или напишите в LinkedIn.",
         requiredFieldsError: "Пожалуйста, заполните все обязательные поля."
       }
-    },
-    calModal: {
-      title: "Забронировать 15-минутный ознакомительный звонок",
-      desc: "Выберите удобную дату и время в вашем часовом поясе для вводного звонка с Абаем Сыздыковым.",
-      openTabBtn: "Открыть календарь Cal.com в новой вкладке"
     },
     footer: {
       rights: "Все права защищены. Аналитик данных и BI-специалист.",
@@ -803,9 +755,7 @@ export const translations: Record<Locale, Translations> = {
       cases: "Кейстер",
       certs: "Сертификаттар",
       skills: "Стек пен әдістер",
-      contact: "Байланыс",
-      bookCall: "Қоңырау белгілеу",
-      bookCallShort: "15-мин қоңырау белгілеу"
+      contact: "Байланыс"
     },
     hero: {
       availableBadge: "ЖАҢА ЖОБАЛАРҒА АШЫҚ",
@@ -815,7 +765,7 @@ export const translations: Record<Locale, Translations> = {
       bioName: "Абай Сыздықов",
       bioRole: "деректер аналитигі және BI маманымын",
       bioBody: ". Мен инженерлік деректер инфрақұрылымын басшылықтың стратегиялық коммерциялық шешімдерімен байланыстыратын автоматтандырылған есептілік жүйелерін, көпдеңгейлі маркетингтік атрибуцияны және клиенттердің кетуін болжайтын моделдерді әзірлеймін.",
-      bookCallBtn: "15 минуттық танысу қоңырауын белгілеу",
+      contactBtn: "Жобаны талқылау",
       downloadCvBtn: "Түйіндемені жүктеу (PDF)",
       cvFileName: "Abay_Syzdykov_Data_Analyst_CV.pdf",
       toolingTitle: "Негізгі құзыреттер мен технологиялық стек",
@@ -951,13 +901,13 @@ export const translations: Record<Locale, Translations> = {
       viewPlaygroundBtn: "Интерактивті стендті ашу →",
       items: [
         {
-          id: "pl-300",
-          title: "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
-          issuer: "Microsoft",
-          badgeText: "Ресми сертификаттау",
-          description: "Корпоративтік BI архитектурасы бойынша расталған сараптама: күрделі DAX есептеулері, 'жұлдыз' сұлбасымен реляциялық өлшемдік модельдеу, RLS деңгейлік қауіпсіздігі және Microsoft Fabric / Power BI Service әкімшілендіру.",
-          skills: ["Advanced DAX", "'Жұлдыз' сұлбасы", "Power BI Service", "Microsoft Fabric", "RLS қауіпсіздігі"],
-          credentialUrl: "https://learn.microsoft.com/credentials/certifications/data-analyst-associate/"
+          id: "python-data-analysis",
+          title: "Python Data Analysis (NASBA аккредитациясы)",
+          issuer: "LinkedIn Learning & NASBA",
+          badgeText: "Расталған сертификат",
+          description: "Python тілінде деректерді талдаудың толық циклі бойынша аккредиттелген кәсіби бағдарлама: барлау және статистикалық талдау, гипотезаларды тексеру және сандық модельдеу (6.60 CPE кредиттері, Certificate ID: e21ebcce0a232da0...).",
+          skills: ["Деректерді талдау", "Статистикалық талдау", "Python", "NASBA CPE #140940"],
+          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "dbt-mds",
@@ -967,15 +917,6 @@ export const translations: Record<Locale, Translations> = {
           description: "Модульдік нұсқаланған ELT деректер құбырларын құру, Snowflake қоймаларын оңтайландыру, деректер сапасын автоматты тестілеу (Data Quality Tests) және деректер витриналарын жобалау.",
           skills: ["dbt Core/Cloud", "Snowflake", "Деректер витриналары", "Сапа сынақтары", "DataOps"],
           credentialUrl: "https://www.getdbt.com/"
-        },
-        {
-          id: "python-data-analysis",
-          title: "Python Data Analysis (NASBA аккредитациясы)",
-          issuer: "LinkedIn Learning & NASBA",
-          badgeText: "Расталған сертификат",
-          description: "Python тілінде деректерді талдаудың толық циклі бойынша аккредиттелген кәсіби бағдарлама: барлау және статистикалық талдау, гипотезаларды тексеру және сандық модельдеу (6.60 CPE кредиттері, Certificate ID: e21ebcce0a232da0...).",
-          skills: ["Деректерді талдау", "Статистикалық талдау", "Python", "NASBA CPE #140940"],
-          credentialUrl: "/certificate-python-data-analysis.pdf"
         },
         {
           id: "echarts-sandbox",
@@ -1057,10 +998,7 @@ export const translations: Record<Locale, Translations> = {
         locationLabel: "Орналасқан жері және уақыт белдеуі",
         locationValue: "Қашықтан (UTC+5 / EMEA және US үшін икемді)",
         networkLabel: "Кәсіби желі",
-        networkLink: "LinkedIn профилі →",
-        callCardTitle: "Тікелей сөйлесуді қалайсыз ба?",
-        callCardDesc: "Хат алмасуға уақыт кетірмей, 15 минуттық онлайн-кездесудің ыңғайлы уақытын таңдаңыз.",
-        callCardBtn: "Кездесу күнтізбесін ашу"
+        networkLink: "LinkedIn профилі →"
       },
       form: {
         nameLabel: "Толық аты-жөніңіз",
@@ -1077,11 +1015,6 @@ export const translations: Record<Locale, Translations> = {
         networkError: "Желілік жіберу қатесі. Байланысыңызды тексеріңіз немесе LinkedIn арқылы хабарласыңыз.",
         requiredFieldsError: "Барлық міндетті өрістерді толтырыңыз."
       }
-    },
-    calModal: {
-      title: "15 минуттық танысу қоңырауын белгілеу",
-      desc: "Абай Сыздықовпен алғашқы талқылау қоңырауы үшін уақыт белдеуіңізге сәйкес келетін ыңғайлы күн мен уақытты таңдаңыз.",
-      openTabBtn: "Cal.com күнтізбесін жаңа қойындыда ашу"
     },
     footer: {
       rights: "Барлық құқықтар қорғалған. Деректер аналитигі және BI маманы.",

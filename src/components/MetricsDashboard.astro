@@ -182,13 +182,11 @@ const t = translations[lang];
       chartInstance.dispose();
     }
 
-    const isDark = document.documentElement.classList.contains('dark');
     chartInstance = echarts.init(container);
-
-    renderChart(isDark);
+    renderChart();
   };
 
-  const renderChart = (isDark: boolean) => {
+  const renderChart = () => {
     if (!chartInstance) return;
 
     const metricData = metricValues[currentMetric][currentRange];
@@ -204,17 +202,17 @@ const t = translations[lang];
       chartConfig.ltvMetricName
     ) : currentMetric.toUpperCase();
 
-    const textColor = isDark ? '#94a3b8' : '#64748b';
-    const gridColor = isDark ? 'rgba(148, 163, 184, 0.12)' : 'rgba(0, 0, 0, 0.08)';
+    const textColor = '#94a3b8';
+    const gridColor = 'rgba(148, 163, 184, 0.12)';
 
     const option: ECOption = {
       backgroundColor: 'transparent',
       tooltip: {
         trigger: 'axis',
-        backgroundColor: isDark ? '#1e293b' : '#ffffff',
-        borderColor: isDark ? '#334155' : '#cbd5e1',
+        backgroundColor: '#1e293b',
+        borderColor: '#334155',
         textStyle: {
-          color: isDark ? '#f8fafc' : '#0f172a',
+          color: '#f8fafc',
           fontFamily: 'JetBrains Mono, monospace',
           fontSize: 12
         },
@@ -322,14 +320,8 @@ const t = translations[lang];
         btn.classList.remove('text-slate-400');
 
         currentRange = (btn as HTMLElement).dataset.range || '30d';
-        const isDark = document.documentElement.classList.contains('dark');
-        renderChart(isDark);
+        renderChart();
       });
-    });
-
-    // Theme change listener
-    window.addEventListener('theme-changed', (e: any) => {
-      renderChart(e.detail.isDark);
     });
 
     // Window Resize

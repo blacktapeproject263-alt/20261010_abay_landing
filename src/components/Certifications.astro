@@ -29,7 +29,7 @@ const t = translations[lang];
     </div>
 
     <!-- Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
       {t.certifications.items.map((item) => (
         <article class="rounded-3xl glass-panel p-6 sm:p-7 border border-stroke-default hover:border-brand-primary/50 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden bg-surface-card hover:-translate-y-1 shadow-lg">
           
@@ -52,9 +52,12 @@ const t = translations[lang];
             <!-- Card Header & Title -->
             <div class="mt-5 mb-4">
               <div class="w-11 h-11 rounded-2xl bg-surface-overlay border border-stroke-default flex items-center justify-center mb-4 text-brand-primary group-hover:scale-105 transition-transform duration-300">
-                {item.id === 'pl-300' && (
-                  <svg class="w-5 h-5 text-brand-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                {item.id === 'python-data-analysis' && (
+                  <svg class="w-5 h-5 text-brand-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
                   </svg>
                 )}
                 {item.id === 'dbt-mds' && (
@@ -62,14 +65,6 @@ const t = translations[lang];
                     <polygon points="12 2 2 7 12 12 22 7 12 2"/>
                     <polyline points="2 17 12 22 22 17"/>
                     <polyline points="2 12 12 17 22 12"/>
-                  </svg>
-                )}
-                {item.id === 'python-data-analysis' && (
-                  <svg class="w-5 h-5 text-brand-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
                   </svg>
                 )}
                 {item.id === 'echarts-sandbox' && (

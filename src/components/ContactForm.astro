@@ -75,19 +75,6 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || "1x00000000000000
             </div>
           </div>
         </div>
-
-        <!-- Fast Discovery Call Block -->
-        <div class="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-left">
-          <div class="text-sm font-bold text-white mb-1">{t.contact.sidebar.callCardTitle}</div>
-          <p class="text-xs text-slate-300 mb-3">{t.contact.sidebar.callCardDesc}</p>
-          <button
-            data-cal-link="abay-syzdykov/15min"
-            data-cal-namespace="discovery-call"
-            class="w-full py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs tracking-wide transition-all shadow-md cursor-pointer"
-          >
-            {t.contact.sidebar.callCardBtn}
-          </button>
-        </div>
       </aside>
 
       <!-- Secure Contact Form -->
@@ -159,7 +146,7 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || "1x00000000000000
 
           <!-- Cloudflare Turnstile Widget -->
           <div class="pt-2">
-            <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto"></div>
+            <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="dark"></div>
           </div>
 
           <!-- Status Message Container -->

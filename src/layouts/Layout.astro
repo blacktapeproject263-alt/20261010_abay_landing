@@ -60,32 +60,18 @@ const ogImageUrl = new URL('/assets/hero-portrait.jpg', siteUrl).href;
     <!-- View Transitions -->
     <ClientRouter />
 
-    <!-- Theme Initialization to prevent FOUC -->
+    <!-- Enforce Dark Theme -->
     <script is:inline>
-      const initTheme = () => {
-        const storedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (storedTheme === 'light' || (!storedTheme && !prefersDark)) {
-          document.documentElement.classList.remove('dark');
-        } else {
-          document.documentElement.classList.add('dark');
-        }
-      };
-      initTheme();
-      document.addEventListener('astro:after-swap', initTheme);
+      document.documentElement.classList.add('dark');
+      document.addEventListener('astro:after-swap', () => {
+        document.documentElement.classList.add('dark');
+      });
     </script>
 
     <!-- Cloudflare Turnstile API -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-
-    <!-- Cal.com embed snippet -->
-    <script is:inline>
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "discovery-call", {origin: "https://cal.com"});
-      Cal.ns["discovery-call"]("ui", {"styles":{"branding":{"brandColor":"#10b981"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    </script>
   </head>
-  <body class="min-h-screen bg-[#090d16] text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-400 dark:bg-[#090d16] dark:text-slate-100">
+  <body class="min-h-screen bg-surface-base text-content-primary antialiased selection:bg-emerald-500/20 selection:text-emerald-400">
     <div class="fixed inset-0 pointer-events-none bg-grid-pattern opacity-40 z-0"></div>
     <div class="relative z-10 flex flex-col min-h-screen">
       <slot />
