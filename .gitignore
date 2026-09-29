@@ -22,3 +22,6 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Audit logs (keep history lean)
+.audit/logs/
