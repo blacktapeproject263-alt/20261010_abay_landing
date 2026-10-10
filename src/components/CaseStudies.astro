@@ -49,11 +49,14 @@ const t = translations[lang];
             <!-- Action buttons -->
             <div class="flex items-center gap-3">
               <a 
-                href={item.dashboardAnchor} 
+                href={item.dashboardAnchor}
+                target={item.dashboardAnchor.startsWith('http') ? '_blank' : undefined}
+                rel={item.dashboardAnchor.startsWith('http') ? 'noopener noreferrer' : undefined}
                 class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 transition-all cursor-pointer border border-emerald-500/30"
               >
                 <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                 <span>{t.cases.viewDashboardBtn}</span>
+                {item.dashboardAnchor.startsWith('http') && <span class="text-[10px]">↗</span>}
               </a>
               <a 
                 href={item.githubUrl}

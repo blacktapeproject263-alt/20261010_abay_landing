@@ -190,8 +190,8 @@ export interface Translations {
 export const translations: Record<Locale, Translations> = {
   en: {
     meta: {
-      title: "Abay Syzdykov | Data Analyst & BI Specialist",
-      description: "Senior Data Analyst & BI Specialist. Turning complex business telemetry into automated dashboards, revenue optimization, and board-ready insights."
+      title: "Abay Syzdykov | Lead Analytics & BI Engineer",
+      description: "Lead Analytics & BI Engineer. Enterprise DWH architectures, Qlik-to-Power BI migrations, procurement intelligence, and autonomous AI data pipelines."
     },
     nav: {
       overview: "Overview",
@@ -202,30 +202,30 @@ export const translations: Record<Locale, Translations> = {
       contact: "Contact"
     },
     hero: {
-      availableBadge: "AVAILABLE FOR NEW ENGAGEMENTS",
-      headingPrefix: "Transforming Complex Data into ",
-      headingGradient: "Actionable Business Alpha",
+      availableBadge: "AVAILABLE FOR LEAD & ARCHITECT ROLES",
+      headingPrefix: "Architecting Enterprise Data & ",
+      headingGradient: "Next-Gen AI Intelligence",
       bioIntro: "Hi, I’m ",
       bioName: "Abay Syzdykov",
-      bioRole: "Data Analyst & BI Specialist",
-      bioBody: ". I architect automated reporting engines, multi-touch attribution pipelines, and predictive churn models that bridge technical data infrastructure with C-suite commercial decisions.",
+      bioRole: "Lead Analytics & BI Engineer",
+      bioBody: ". I architect resilient enterprise data warehouses (PostgreSQL Bronze-Silver-Gold, FDW), orchestrate automated data pipelines, and deploy applied AI systems (Autonomous Multi-LLM Council) bridging technical telemetry with board-level commercial decisions.",
       contactBtn: "Discuss a Project",
       downloadCvBtn: "Download CV (PDF)",
-      cvFileName: "Abay_Syzdykov_Data_Analyst_CV.pdf",
-      toolingTitle: "Core Tooling & Competencies",
+      cvFileName: "Abay_Syzdykov_CV_EN.pdf",
+      toolingTitle: "Core Enterprise & AI Stack",
       tools: [
-        "SQL (Snowflake / BigQuery / Postgres)",
-        "Python (Pandas / Scikit / NumPy)",
-        "Power BI & Advanced DAX",
-        "Apache ECharts / DataViz",
-        "ETL & dbt Pipelines",
-        "Statistical Modeling & A/B Testing"
+        "PostgreSQL (DWH Bronze-Silver-Gold, FDW)",
+        "Qlik Sense Enterprise & Power BI (DAX, RLS)",
+        "Python (EDA, Stats, FastAPI, Survival Models)",
+        "Kestra & Docker (Workflow Orchestration)",
+        "Modern Data Stack (Snowflake & dbt)",
+        "Multi-LLM Orchestration & Agentic Systems"
       ],
-      topRatedBadge: "Top Rated",
-      badge1Label: "Reporting Automation",
-      badge1Value: "100% Zero-Touch",
-      badge2Label: "Cost Reduction",
-      badge2Value: "+$320K ARR Impact"
+      topRatedBadge: "Lead Impact",
+      badge1Label: "Enterprise Cluster Scale",
+      badge1Value: "100+ Active Users",
+      badge2Label: "Procurement & BI TCO",
+      badge2Value: "-20% Cycle / License Savings"
     },
     metrics: {
       badge: "Interactive Proof of Work",
@@ -277,9 +277,9 @@ export const translations: Record<Locale, Translations> = {
     },
     cases: {
       badge: "STAR Framework Evidence",
-      title: "Featured Commercial Case Studies",
-      description: "Real business challenges solved through quantitative rigor, production data engineering, and C-suite actionable reporting.",
-      viewDashboardBtn: "View Interactive Dashboard",
+      title: "Featured Commercial & AI Case Studies",
+      description: "Real enterprise challenges solved through rigorous data warehousing, modern BI migrations, and autonomous AI architectures.",
+      viewDashboardBtn: "View Live Dashboard",
       githubSourceBtn: "GitHub Source",
       clientPrefix: "Client: ",
       situationLabel: "Situation & Business Problem (Task)",
@@ -287,51 +287,67 @@ export const translations: Record<Locale, Translations> = {
       resultsLabel: "Quantified Outcomes (Result)",
       items: [
         {
-          id: "churn-engine",
-          tag: "FinTech & SaaS",
-          title: "Subscriber Cohort Retention & Churn Prediction Engine",
-          clientType: "B2B SaaS ($12M ARR)",
-          situation: "Subscription churn was rising by 3.2% QoQ without visibility into which user cohorts decayed after month 2. The executive team relied on lagging 30-day billing summaries and lacked proactive leading risk indicators.",
-          action: "Architected automated dbt/Snowflake data models structuring 1.8M subscriber activity logs. Built Python survival analysis (Kaplan-Meier & Cox Proportional Hazards) to isolate core friction milestones. Designed an automated Power BI dashboard with DAX-driven cohort decay tracking and real-time alerts for at-risk accounts.",
+          id: "kmg-bi-modernization",
+          tag: "Enterprise BI Modernization",
+          title: "Qlik Sense to Power BI Enterprise Migration & TCO Optimization",
+          clientType: "KMG DIGITAL LLP (National Oil & Gas Sector)",
+          situation: "Legacy undocumented Qlik Sense reporting estate required recurring heavy licensing costs and suffered from fragmented load scripts across production KPI monitors.",
+          action: "Reverse-engineered and overhauled legacy Qlik load scripts, migrating two flagship corporate dashboards to Power BI. Automated data reload tasks across 100+ enterprise accounts with strict Row-Level Security (RLS), vibe-coded an interactive analytics web portal, and mentored 3 data engineers.",
           resultMetrics: [
-            { label: "Cohort Churn Reduction", value: "-18%", detail: "Across at-risk mid-tier subscribers" },
-            { label: "Preserved Capital", value: "+$320K", detail: "Annualized Recurring Revenue saved" },
-            { label: "Reporting Efficiency", value: "14h → 0h", detail: "Automated manual weekly spreadsheet tasks" }
+            { label: "License TCO Savings", value: "Recurring", detail: "Annual Qlik Sense license overhead eliminated" },
+            { label: "Cluster Scale", value: "100+ Users", detail: "30 scheduled data reload tasks managed" },
+            { label: "Team Velocity", value: "3 Engineers", detail: "Upskilled and mentored in modern BI practices" }
           ],
-          techStack: ["Snowflake", "dbt", "Python (Lifelines/Pandas)", "Power BI", "Advanced DAX"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+          techStack: ["Power BI", "Qlik Sense Enterprise", "DAX", "Row-Level Security (RLS)", "Vibe-Coding (HTML/JS)"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
           dashboardAnchor: "#showcase"
         },
         {
-          id: "marketing-attribution",
-          tag: "E-Commerce & DTC",
-          title: "Multi-Touch Marketing Attribution & Unit Economics Engine",
-          clientType: "Direct-to-Consumer Brand ($2.4M Ad Spend)",
-          situation: "Marketing spend across Google Search, Meta Ads, and TikTok had conflicting channel ROAS due to last-click attribution bias, resulting in over-budgeting low-efficiency campaigns and underfunding discovery channels.",
-          action: "Engineered a first-party Markov Chain multi-touch attribution algorithm in Python. Cleaned and joined 4.2M clickstream events using SQL window functions in BigQuery. Delivered an interactive executive scenario simulator that modeled revenue yield per dollar invested across each channel.",
+          id: "hr-attrition-platform",
+          tag: "Interactive Production Dashboard",
+          title: "HR Attrition & Workforce Retention Intelligence Platform",
+          clientType: "Enterprise Workforce Telemetry (Live Web App)",
+          situation: "HR and operations leaders lacked proactive leading indicators of attrition risk, causing delayed intervention and turnover among critical roles.",
+          action: "Engineered a production-ready interactive analytics web application with dynamic KPI cards, department & role multi-filters, tenure distributions, and an employee retention risk simulator with sub-second reactivity.",
           resultMetrics: [
-            { label: "Blended ROAS Uplift", value: "+23%", detail: "Return on ad spend optimized" },
-            { label: "Budget Reallocated", value: "28%", detail: "Shifted to high-converting mid-funnel paths" },
-            { label: "Net Incremental Rev", value: "+$640K", detail: "Directly attributable to optimized mix" }
+            { label: "Sub-Second Latency", value: "<100ms", detail: "Instant multi-factor cohort slicing" },
+            { label: "Serverless Edge", value: "Zero-Cost", detail: "Deployed on Cloudflare Pages" },
+            { label: "Risk Simulator", value: "Real-Time", detail: "Scenario testing for flight-risk talent" }
           ],
-          techStack: ["Google BigQuery", "Python (NetworkX/NumPy)", "SQL Window Functions", "Power BI", "ECharts"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
-          dashboardAnchor: "#showcase"
+          techStack: ["React 18", "Vite", "TailwindCSS", "Chart.js", "Cloudflare Pages"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
+          dashboardAnchor: "https://webdashboards.pages.dev"
         },
         {
-          id: "logistics-sla",
-          tag: "Supply Chain & Ops",
-          title: "Fulfillment SLA Optimization & Warehouse Intake Forecasting",
-          clientType: "Regional Logistics 3PL Network",
-          situation: "Peak season volume surges caused a 12% SLA fulfillment breach rate, triggering $85K in contractual carrier penalties and overburdening warehouse dispatch teams.",
-          action: "Trained Python ARIMA & Prophet time-series models for parcel intake volume prediction with a 94.2% accuracy rate. Streamlined ingestion pipelines into partitioned Postgres data marts and rolled out live operational Kanban dashboards for warehouse floor leads.",
+          id: "llm-counsil",
+          tag: "Next-Gen AI Systems",
+          title: "Autonomous Multi-LLM Strategic Council Orchestrator",
+          clientType: "Open-Source AI Data Architecture",
+          situation: "Single LLM reasoning suffers from cognitive bias and hallucinations when evaluating complex enterprise system architectures and multi-million dollar procurement decisions.",
+          action: "Engineered an autonomous multi-agent council orchestrator on Google Antigravity 2.0 running 5 leading frontier models (Claude, ChatGPT, Gemini Pro, Grok, Nemotron) through blind peer review, Anti-Leak Sanitizer (RFC #2), Concurrency Clipboard Mutex (RFC #3), and automated grounding in Google NotebookLM.",
           resultMetrics: [
-            { label: "SLA Delivery Breaches", value: "12% → 2.4%", detail: "Slashing late dispatches by 80%" },
-            { label: "Penalty Avoidance", value: "+$75,000", detail: "Contractual SLA fees avoided" },
-            { label: "On-Time Dispatch Rate", value: "98.6%", detail: "Sustained during Q4 peak holiday season" }
+            { label: "Divergence Depth", value: "5 Models", detail: "Zero-bias anonymous cross-review" },
+            { label: "Synthesis Quality", value: ">50 KB", detail: "RFC #1 Quality Floor validated output" },
+            { label: "Execution Standard", value: "DONE = VERIFIED", detail: "Live automated verification loops" }
           ],
-          techStack: ["PostgreSQL", "Python (Prophet/Statsmodels)", "Automated ETL", "ECharts", "Metabase"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+          techStack: ["Google Antigravity 2.0", "Python", "PowerShell 7 Core", "Ollama", "Chrome CDP", "NotebookLM"],
+          githubUrl: "https://github.com/blacktapeproject263-alt/llm-counsil",
+          dashboardAnchor: "https://github.com/blacktapeproject263-alt/llm-counsil"
+        },
+        {
+          id: "erg-procurement-dwh",
+          tag: "Procurement & TCO",
+          title: "Enterprise Procurement DWH & Sensitive Pricing Governance",
+          clientType: "ERG Capital Projects (Eurasian Resources Group)",
+          situation: "Procurement approval cycles took 90 days across disparate silos (SAP, OutSystems, Oracle MDM), exposing enterprise bids to risk of price leaks and vendor collusion.",
+          action: "Led the architecture of a Strategic Procurement Reporting System unifying SAP, Oracle MDM, and Qlik Sense into an audited Single Source of Truth. Enforced strict Row-Level Security (RLS) on sensitive TCO data and built predictive delay trackers.",
+          resultMetrics: [
+            { label: "Procurement Cycle", value: "-20%", detail: "Reduced from 90 to 72 business days" },
+            { label: "Compliance Breaches", value: "-15%", detail: "Slashed engineering review lag by 35%" },
+            { label: "Supplier Base", value: "1,000+ Vendors", detail: "Audited & governed in central registry" }
+          ],
+          techStack: ["PostgreSQL DWH", "SAP MM/PTP", "Oracle MDM", "Qlik Sense", "Row-Level Security (RLS)"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
           dashboardAnchor: "#showcase"
         }
       ]
@@ -339,17 +355,46 @@ export const translations: Record<Locale, Translations> = {
     certifications: {
       badge: "Verified Qualifications & Sandboxes",
       title: "Industry Certifications & Interactive Showcases",
-      description: "Rigorous vendor certifications and verifiable technical sandboxes demonstrating enterprise data modeling, cloud engineering, and decision-support systems.",
+      description: "Rigorous vendor certifications, live production platforms, and verifiable credentials demonstrating enterprise data architecture and applied AI systems.",
       verifyBtn: "Verify Credential →",
       pdfBtn: "View Certificate (PDF) →",
-      viewPlaygroundBtn: "Launch Interactive Showcase →",
+      viewPlaygroundBtn: "Launch Live App →",
       items: [
+        {
+          id: "hr-attrition-app",
+          title: "HR Attrition Analytics Portal (webdashboards.pages.dev)",
+          issuer: "Cloudflare Pages Production",
+          badgeText: "Live Interactive App",
+          description: "High-performance client-side interactive telemetry engine built with React 18, Vite, and Chart.js. Simulates employee turnover risk, department tenure, and flight-risk intervention with sub-second reactivity.",
+          skills: ["React 18", "Vite", "TailwindCSS", "Chart.js", "HR Analytics", "Cloudflare Pages"],
+          credentialUrl: "https://webdashboards.pages.dev",
+          isPlayground: true
+        },
+        {
+          id: "llm-counsil-open-source",
+          title: "Multi-LLM Strategic Council Orchestrator",
+          issuer: "Google Antigravity 2.0 & Open-Source",
+          badgeText: "AI Architecture",
+          description: "Autonomous multi-agent orchestration architecture executing blind peer review across 5 LLMs with RFC #1 Quality Floor, Anti-Leak Sanitizer, Concurrency Clipboard Mutex, and NotebookLM synchronization.",
+          skills: ["Multi-Agent AI", "Google Antigravity 2.0", "Python", "Ollama", "Chrome CDP", "Google NotebookLM"],
+          credentialUrl: "https://github.com/blacktapeproject263-alt/llm-counsil",
+          isPlayground: true
+        },
+        {
+          id: "qlik-sense-expert",
+          title: "Qlik Sense Expert Certification",
+          issuer: "Datanomix Academy",
+          badgeText: "Enterprise BI",
+          description: "Advanced data modeling, load scripts, complex set analysis, NPrinting automated report generation, and enterprise cluster administration (100+ seats, Row-Level Security).",
+          skills: ["Qlik Sense Enterprise", "Load Scripts", "Set Analysis", "NPrinting", "Row-Level Security"],
+          credentialUrl: "https://www.linkedin.com/in/abay-syzdykov-ba4b75113/"
+        },
         {
           id: "python-data-analysis",
           title: "Python Data Analysis (NASBA Accredited)",
           issuer: "LinkedIn Learning & NASBA",
           badgeText: "Verified Certificate",
-          description: "Accredited technical certification covering end-to-end data analysis, statistical data analysis, hypothesis testing, and quantitative modeling with Python (CPE Credit: 6.60, Certificate ID: e21ebcce0a232da0...).",
+          description: "Accredited technical certification covering end-to-end exploratory data analysis (EDA), statistical tests, hypothesis testing, and quantitative modeling with Python (CPE Credit: 6.60, Certificate ID: e21ebcce0a232da0...).",
           skills: ["Data Analysis", "Statistical Analysis", "Python", "NASBA CPE #140940"],
           credentialUrl: "/certificate-python-data-analysis.pdf"
         },
@@ -363,14 +408,22 @@ export const translations: Record<Locale, Translations> = {
           credentialUrl: "https://www.getdbt.com/"
         },
         {
-          id: "echarts-sandbox",
-          title: "Interactive ECharts / Analytical Playground",
-          issuer: "Live Telemetry Sandbox",
-          badgeText: "Live Sandbox",
-          description: "High-performance client-side interactive telemetry engine built with Apache ECharts. Simulates multi-cohort retention decay curves, MRR growth vectors, and dynamic unit economics with sub-second recalculation.",
-          skills: ["Apache ECharts", "Cohort Retention Simulation", "Unit Economics", "Interactive Telemetry"],
-          credentialUrl: "#showcase",
-          isPlayground: true
+          id: "toastmasters-international",
+          title: "Toastmasters International (Competent Communicator)",
+          issuer: "Toastmasters International",
+          badgeText: "Leadership & Speaking",
+          description: "Recognized public speaker, cross-functional communication leader, and community organizer for international data events, engineering workshops, and technical mentorship.",
+          skills: ["Executive Communication", "Technical Mentorship", "Stakeholder Alignment"],
+          credentialUrl: "https://www.toastmasters.org/"
+        },
+        {
+          id: "chinese-hsk5",
+          title: "Chinese Language Proficiency (HSK Level 5)",
+          issuer: "Confucius Institute / Hanban",
+          badgeText: "Full Professional Fluency",
+          description: "Bilingual technical communication, negotiation, and documentation translation for cross-border engineering projects with Chinese EPC contractors (Sinopec, KERUI, Sitan). Graduated from Xi’an Shiyou University.",
+          skills: ["Chinese (HSK 5)", "Petroleum Engineering", "Bilingual EPC Negotiation", "Cross-Border Ops"],
+          credentialUrl: "https://www.linkedin.com/in/abay-syzdykov-ba4b75113/"
         }
       ]
     },
@@ -431,12 +484,12 @@ export const translations: Record<Locale, Translations> = {
     },
     contact: {
       badge: "Direct Engagement",
-      title: "Let’s Build Data Infrastructure That Converts",
-      description: "Have an analytics pipeline bottleneck, need automated reporting, or looking for an experienced Data Analyst? Send an inquiry below.",
+      title: "Let’s Build Data Infrastructure That Drives Results",
+      description: "Have a complex DWH bottleneck, planning a BI modernization (Qlik to Power BI), or looking for a Lead Analytics Engineer? Send an inquiry below.",
       sidebar: {
         name: "Abay Syzdykov",
-        role: "Data Analyst & BI Specialist",
-        bio: "Available for remote contracts, analytics consulting, dashboard implementations, and full-time senior analytical roles.",
+        role: "Lead Analytics & BI Engineer",
+        bio: "Available for Lead & Architect engagements, DWH architecture consulting, enterprise BI migrations, and applied AI systems.",
         responseTimeLabel: "Typical Response Time",
         responseTimeValue: "Within 24 business hours",
         locationLabel: "Location & Timezone",
@@ -461,15 +514,15 @@ export const translations: Record<Locale, Translations> = {
       }
     },
     footer: {
-      rights: "All rights reserved. Data Analyst & BI Specialist.",
+      rights: "All rights reserved. Lead Analytics & BI Engineer.",
       edgeBadge: "Zero-Cost Edge Infrastructure • Cloudflare Pages + Workers",
       backToTop: "↑ Back to Top"
     }
   },
   ru: {
     meta: {
-      title: "Абай Сыздыков | Аналитик данных и BI-специалист",
-      description: "Senior Data Analyst & BI-специалист. Превращаю сложные массивы данных в автоматизированные дашборды, рост выручки и управленческие инсайты для C-level."
+      title: "Абай Сыздыков | Ведущий BI-инженер & Analytics Architect",
+      description: "Ведущий BI-инженер и архитектор аналитических данных. Корпоративные DWH (PostgreSQL, FDW), миграции Qlik в Power BI, аналитика закупок и мульти-LLM системы."
     },
     nav: {
       overview: "Обзор",
@@ -480,30 +533,30 @@ export const translations: Record<Locale, Translations> = {
       contact: "Контакты"
     },
     hero: {
-      availableBadge: "ОТКРЫТ ДЛЯ НОВЫХ ПРОЕКТОВ",
-      headingPrefix: "Трансформация сложных данных в ",
-      headingGradient: "измеримую прибыль и бизнес-преимущество",
+      availableBadge: "ОТКРЫТ ДЛЯ LEAD & ARCHITECT РОЛЕЙ",
+      headingPrefix: "Корпоративная инженерия данных и ",
+      headingGradient: "прикладной искусственный интеллект",
       bioIntro: "Привет, я ",
       bioName: "Абай Сыздыков",
-      bioRole: "аналитик данных и BI-специалист",
-      bioBody: ". Я проектирую автоматизированные аналитические платформы, пайплайны сквозной атрибуции и прогнозные модели оттока, связывая инженерную инфраструктуру данных со стратегическими бизнес-решениями руководства.",
+      bioRole: "Ведущий BI-инженер и архитектор данных",
+      bioBody: ". Я проектирую отказоустойчивые корпоративные хранилища данных (Bronze-Silver-Gold на PostgreSQL с FDW), руковожу миграцией аналитики (Qlik Sense в Power BI) и внедряю прикладной ИИ (Multi-LLM Council, вайбкодинг веб-интерфейсов), связывая инженерные платформы с управленческими решениями C-level.",
       contactBtn: "Обсудить проект",
       downloadCvBtn: "Скачать резюме (PDF)",
-      cvFileName: "Abay_Syzdykov_Data_Analyst_CV.pdf",
-      toolingTitle: "Ключевые компетенции и стек",
+      cvFileName: "Abay_Syzdykov_CV_RU.pdf",
+      toolingTitle: "Ключевые компетенции и корпоративный стек",
       tools: [
-        "SQL (Snowflake / BigQuery / Postgres)",
-        "Python (Pandas / Scikit / NumPy)",
-        "Power BI & Advanced DAX",
-        "Apache ECharts / DataViz",
-        "ETL & dbt Pipelines",
-        "Статистическое моделирование & A/B тесты"
+        "PostgreSQL (DWH Bronze-Silver-Gold, FDW)",
+        "Qlik Sense Enterprise и Power BI (DAX, RLS)",
+        "Python (EDA, статистика, FastAPI, модели выживаемости)",
+        "Kestra & Docker (Оркестрация пайплайнов)",
+        "Modern Data Stack (Snowflake & dbt)",
+        "Мультиагентный ИИ (Multi-LLM Council, Antigravity 2.0)"
       ],
-      topRatedBadge: "Высший рейтинг",
-      badge1Label: "Автоматизация отчетности",
-      badge1Value: "100% без ручной рутины",
-      badge2Label: "Оптимизация затрат",
-      badge2Value: "+$320K к годовой выручке"
+      topRatedBadge: "Lead Impact",
+      badge1Label: "Масштаб кластера",
+      badge1Value: "100+ активных пользователей",
+      badge2Label: "Оптимизация TCO и процессов",
+      badge2Value: "-20% цикл / экономия лицензий"
     },
     metrics: {
       badge: "Интерактивная демонстрация",
@@ -555,73 +608,118 @@ export const translations: Record<Locale, Translations> = {
     },
     cases: {
       badge: "Методология STAR: Реальный опыт",
-      title: "Избранные коммерческие кейсы",
-      description: "Решение реальных бизнес-задач с помощью математической строгости, промышленной инженерии данных и наглядной аналитики для руководства.",
-      viewDashboardBtn: "Открыть интерактивный дашборд",
+      title: "Флагманские инженерные кейсы и прикладной ИИ",
+      description: "Решение задач национальных холдингов и бизнеса методами DWH, миграции систем отчетности и мультиагентного ИИ.",
+      viewDashboardBtn: "Открыть живой дашборд",
       githubSourceBtn: "Исходный код на GitHub",
-      clientPrefix: "Клиент: ",
+      clientPrefix: "Заказчик: ",
       situationLabel: "Ситуация и бизнес-задача (Situation & Task)",
       actionLabel: "Технический пайплайн и архитектура (Action)",
       resultsLabel: "Измеримые результаты (Result)",
       items: [
         {
-          id: "churn-engine",
-          tag: "Финтех и SaaS",
-          title: "Система когортного анализа удержания и прогнозирования оттока подписчиков",
-          clientType: "B2B SaaS ($12M годовой выручки)",
-          situation: "Отток подписчиков возрастал на 3.2% квартал к кварталу без понимания того, какие именно когорты пользователей деградируют после 2-го месяца. Руководство опиралось на запаздывающие 30-дневные биллинговые сводки и не имело опережающих индикаторов риска.",
-          action: "Спроектировал автоматизированные модели данных в dbt/Snowflake для структурирования 1.8M логов активности пользователей. Разработал на Python модель анализа дожития (Каплан-Мейер и регрессия пропорциональных рисков Кокса) для выявления критических точек оттока. Создал интерактивный дашборд в Power BI на базе мер DAX с отслеживанием динамики когорт и алертами по аккаунтам группы риска.",
+          id: "kmg-bi-modernization",
+          tag: "Корпоративная модернизация BI",
+          title: "Миграция корпоративной отчетности с Qlik Sense на Power BI и оптимизация TCO",
+          clientType: "ТОО «KMG DIGITAL» (Национальный нефтегазовый холдинг)",
+          situation: "Легаси-инфраструктура дашбордов Qlik Sense без исходной документации требовала постоянных высоких лицензионных затрат и страдала от разрозненных скриптов загрузки производственных KPI.",
+          action: "Провел глубокий реинжиниринг Qlik load scripts, осуществил перенос двух ключевых корпоративных дашбордов на Power BI. Администрировал кластерную инфраструктуру на 100+ пользователей с настройкой политик Row-Level Security (RLS), завайбкодил интерактивный веб-сайт с аналитикой и обучал 3 специалистов команды.",
           resultMetrics: [
-            { label: "Снижение оттока в когортах", value: "-18%", detail: "Среди подписчиков среднего чека в группе риска" },
-            { label: "Сохраненный капитал", value: "+$320K", detail: "Спасенная годовая регулярная выручка (ARR)" },
-            { label: "Эффективность отчетности", value: "14ч → 0ч", detail: "Автоматизация еженедельной ручной сборки таблиц" }
+            { label: "Экономия на лицензиях", value: "Ежегодно", detail: "Оптимизация лицензионного бюджета Qlik" },
+            { label: "Масштаб кластера", value: "100+ польз.", detail: "Диспетчеризация 30 регулярных задач reload" },
+            { label: "Развитие команды", value: "3 инженера", detail: "Регулярное менторство и повышение грейдов" }
           ],
-          techStack: ["Snowflake", "dbt", "Python (Lifelines/Pandas)", "Power BI", "Advanced DAX"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+          techStack: ["Power BI", "Qlik Sense Enterprise", "DAX", "Row-Level Security (RLS)", "Вайбкодинг (HTML/JS)"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
           dashboardAnchor: "#showcase"
         },
         {
-          id: "marketing-attribution",
-          tag: "E-Commerce и DTC",
-          title: "Модель сквозной мультиканальной атрибуции и юнит-экономики маркетинга",
-          clientType: "DTC-бренд (Рекламный бюджет $2.4M)",
-          situation: "Рекламные бюджеты в Google Search, Meta Ads и TikTok имели противоречивые показатели ROAS из-за искажения модели 'последнего клика'. В результате неэффективные кампании перефинансировались, а охватные каналы первого касания недополучали бюджет.",
-          action: "Разработал собственный алгоритм мультиканальной атрибуции на основе цепей Маркова на Python. Обработал и объединил 4.2M событий кликстрима с помощью оконных функций SQL в BigQuery. Внедрил интерактивный симулятор сценариев для руководства, моделирующий отдачу выручки на каждый вложенный доллар по каждому каналу.",
+          id: "hr-attrition-platform",
+          tag: "Интерактивная аналитика",
+          title: "Интерактивная платформа HR-оттока и моделирования удержания кадров",
+          clientType: "Корпоративная кадровая телеметрия (Live Web App)",
+          situation: "Руководство испытывало нехватку оперативных опережающих метрик риска ухода ценных сотрудников, опираясь на запоздалые квартальные отчеты об увольнениях.",
+          action: "Спроектировал и развернул на Cloudflare Pages интерактивный веб-портал на React 18, Vite и TailwindCSS с мульти-фильтрацией по департаментам и должностям, профилями сотрудников и динамическим симулятором факторов риска удержания.",
           resultMetrics: [
-            { label: "Рост совокупного ROAS", value: "+23%", detail: "Оптимизация отдачи рекламных инвестиций" },
-            { label: "Перераспределено бюджета", value: "28%", detail: "Направлено в наиболее конверсионные связки" },
-            { label: "Чистый прирост выручки", value: "+$640K", detail: "Прямой результат оптимизации медиамикса" }
+            { label: "Отклик интерфейса", value: "<100мс", detail: "Мгновенная клиентская фильтрация когорт" },
+            { label: "Serverless Edge", value: "Cloudflare", detail: "Нулевая стоимость серверной инфраструктуры" },
+            { label: "Симулятор рисков", value: "Real-Time", detail: "Проактивная оценка факторов удержания" }
           ],
-          techStack: ["Google BigQuery", "Python (NetworkX/NumPy)", "Оконные функции SQL", "Power BI", "ECharts"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
-          dashboardAnchor: "#showcase"
+          techStack: ["React 18", "Vite", "TailwindCSS", "Chart.js", "Cloudflare Pages"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
+          dashboardAnchor: "https://webdashboards.pages.dev"
         },
         {
-          id: "logistics-sla",
-          tag: "Логистика и цепочки поставок",
-          title: "Оптимизация SLA фулфилмента и прогнозирование складской загрузки",
-          clientType: "Региональная логистическая сеть 3PL",
-          situation: "Пиковые сезонные всплески объемов приводили к 12% нарушений SLA по доставке, что влекло $85K штрафов по договорам и вызывало регулярные перегрузки складских смен.",
-          action: "Обучил модели временных рядов (ARIMA и Prophet) на Python для прогнозирования объемов входящих отправлений с точностью 94.2%. Оптимизировал пайплайны загрузки в секционированные витрины данных Postgres и внедрил операционные канбан-дашборды реального времени для начальников смен.",
+          id: "llm-counsil",
+          tag: "Мультиагентный ИИ",
+          title: "Автономный оркестратор стратегического консилиума мульти-LLM",
+          clientType: "Открытая архитектура ИИ-агентов (`llm-counsil`)",
+          situation: "Одиночные языковые модели подвержены галлюцинациям и когнитивным искажениям при оценке сложнейших архитектурных решений и многомиллионных инвестиционных проектов.",
+          action: "Создал автономный оркестратор консилиума на Google Antigravity 2.0, запускающий 5 передовых моделей (Claude, ChatGPT, Gemini Pro, Grok, Nemotron) через слепое анонимное рецензирование, Anti-Leak Sanitizer (RFC #2), Concurrency Clipboard Mutex (RFC #3) и интеграцию в Google NotebookLM.",
           resultMetrics: [
-            { label: "Нарушения SLA доставки", value: "12% → 2.4%", detail: "Сокращение задержек отправлений на 80%" },
-            { label: "Предотвращение штрафов", value: "+$75,000", detail: "Сбережение средств по штрафным санкциям" },
-            { label: "Своевременность отгрузок", value: "98.6%", detail: "Удержано в пиковый период 4-го квартала" }
+            { label: "Глубина дивергенции", value: "5 моделей", detail: "Полное исключение предвзятости моделей" },
+            { label: "Качество синтеза", value: ">50 КБ", detail: "Валидация по RFC #1 Quality Floor" },
+            { label: "Стандарт надежности", value: "DONE = VERIFIED", detail: "Автоматизированные циклы проверок" }
           ],
-          techStack: ["PostgreSQL", "Python (Prophet/Statsmodels)", "Автоматизированный ETL", "ECharts", "Metabase"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+          techStack: ["Google Antigravity 2.0", "Python", "PowerShell 7 Core", "Ollama", "Chrome CDP", "NotebookLM"],
+          githubUrl: "https://github.com/blacktapeproject263-alt/llm-counsil",
+          dashboardAnchor: "https://github.com/blacktapeproject263-alt/llm-counsil"
+        },
+        {
+          id: "erg-procurement-dwh",
+          tag: "Закупки и TCO",
+          title: "Корпоративное DWH закупок и защита чувствительных коммерческих цен",
+          clientType: "ERG Capital Projects (Евразийская Группа)",
+          situation: "Цикл согласования закупочных процедур занимал 90 дней из-за разрозненных данных в SAP, OutSystems и Oracle MDM, что создавало риск ценового сговора и утечки внутренних лимитов.",
+          action: "Возглавил создание Единой стратегической аналитической системы закупок, объединившей SAP, Oracle MDM и Qlik Sense в единый источник правды (Single Source of Truth). Внедрил строгие политики Row-Level Security (RLS) и предиктивное выявление задержек согласований.",
+          resultMetrics: [
+            { label: "Цикл процедур", value: "-20%", detail: "Сокращение сроков с 90 до 72 дней" },
+            { label: "Снижение нарушений", value: "-15%", detail: "Ускорение согласования документации на 35%" },
+            { label: "База поставщиков", value: "1 000+ комп.", detail: "Единый аналитический аудит-реестр" }
+          ],
+          techStack: ["PostgreSQL DWH", "SAP MM/PTP", "Oracle MDM", "Qlik Sense", "Row-Level Security (RLS)"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
           dashboardAnchor: "#showcase"
         }
       ]
     },
     certifications: {
-      badge: "Подтвержденная квалификация и песочницы",
-      title: "Профессиональные сертификаты и интерактивные шоукейсы",
-      description: "Официальные вендорские сертификации и верифицируемые технические демонстрационные стенды, подтверждающие высокий уровень проектирования хранилищ, моделирования данных и разработки BI-систем.",
+      badge: "Подтвержденная квалификация и стенды",
+      title: "Профессиональные сертификаты и интерактивные стенды",
+      description: "Официальные вендорские сертификации, развернутые веб-приложения и верифицированные квалификации в области DWH и прикладного ИИ.",
       verifyBtn: "Проверить сертификат →",
       pdfBtn: "Смотреть сертификат (PDF) →",
-      viewPlaygroundBtn: "Открыть интерактивный стенд →",
+      viewPlaygroundBtn: "Открыть приложение →",
       items: [
+        {
+          id: "hr-attrition-app",
+          title: "Портал HR-аналитики оттока (webdashboards.pages.dev)",
+          issuer: "Продакшн-приложение на Cloudflare Pages",
+          badgeText: "Живое веб-приложение",
+          description: "Интерактивная аналитическая система на React 18, Vite и Chart.js: сквозной мониторинг текучести кадров, фильтрация департаментов, карточки сотрудников и симулятор факторов риска удержания.",
+          skills: ["React 18", "Vite", "TailwindCSS", "Chart.js", "HR-аналитика", "Cloudflare Pages"],
+          credentialUrl: "https://webdashboards.pages.dev",
+          isPlayground: true
+        },
+        {
+          id: "llm-counsil-open-source",
+          title: "Оркестратор стратегического консилиума Multi-LLM",
+          issuer: "Google Antigravity 2.0 & Open-Source",
+          badgeText: "ИИ-архитектура",
+          description: "Автономная мультиагентная система на 5 передовых моделях с протоколами RFC #1 Quality Floor, Anti-Leak Sanitizer, Concurrency Clipboard Mutex и синхронизацией с Google NotebookLM.",
+          skills: ["Мультиагентный ИИ", "Google Antigravity 2.0", "Python", "Ollama", "Chrome CDP", "Google NotebookLM"],
+          credentialUrl: "https://github.com/blacktapeproject263-alt/llm-counsil",
+          isPlayground: true
+        },
+        {
+          id: "qlik-sense-expert",
+          title: "Эксперт Qlik Sense (Qlik Sense Expert)",
+          issuer: "Академия Datanomix",
+          badgeText: "Enterprise BI",
+          description: "Продвинутое моделирование данных, реинжиниринг load scripts, сложный Set Analysis, генерация отчетов NPrinting и администрирование корпоративного кластера (100+ пользователей, RLS).",
+          skills: ["Qlik Sense Enterprise", "Load Scripts", "Set Analysis", "NPrinting", "Row-Level Security"],
+          credentialUrl: "https://www.linkedin.com/in/abay-syzdykov-ba4b75113/"
+        },
         {
           id: "python-data-analysis",
           title: "Python Data Analysis (Аккредитация NASBA)",
@@ -641,14 +739,22 @@ export const translations: Record<Locale, Translations> = {
           credentialUrl: "https://www.getdbt.com/"
         },
         {
-          id: "echarts-sandbox",
-          title: "Interactive ECharts / Analytical Playground",
-          issuer: "Песочница живой телеметрии",
-          badgeText: "Интерактивный стенд",
-          description: "Высокопроизводительный аналитический движок на Apache ECharts с мгновенным откликом: динамическое моделирование когортного оттока, векторов роста MRR и расчет юнит-экономики при смене временных горизонтов.",
-          skills: ["Apache ECharts", "Когортный анализ оттока", "Юнит-экономика", "Интерактивная телеметрия"],
-          credentialUrl: "#showcase",
-          isPlayground: true
+          id: "toastmasters-international",
+          title: "Toastmasters International (Competent Communicator)",
+          issuer: "Toastmasters International",
+          badgeText: "Лидерство и коммуникации",
+          description: "Признанный спикер, лидер кросс-функциональных коммуникаций и организатор профессиональных митапов и воркшопов по инженерии данных.",
+          skills: ["Executive-коммуникация", "Менторство инженеров", "Стейкхолдер-менеджмент"],
+          credentialUrl: "https://www.toastmasters.org/"
+        },
+        {
+          id: "chinese-hsk5",
+          title: "Китайский язык: HSK Уровень 5 (Свободное владение)",
+          issuer: "Институт Конфуция / Hanban",
+          badgeText: "Профессиональное владение",
+          description: "Двуязычные технические и коммерческие переговоры, перевод документации и ведение международных проектов с китайскими EPC-подрядчиками (Sinopec, KERUI, Sitan). Выпускник Сианьского нефтяного университета.",
+          skills: ["Китайский язык (HSK 5)", "Нефтегазовый инжиниринг", "B2B-переговоры EPC", "Кросс-культурные проекты"],
+          credentialUrl: "https://www.linkedin.com/in/abay-syzdykov-ba4b75113/"
         }
       ]
     },
@@ -709,12 +815,12 @@ export const translations: Record<Locale, Translations> = {
     },
     contact: {
       badge: "Прямой контакт",
-      title: "Создадим аналитическую инфраструктуру, работающую на результат",
-      description: "Столкнулись со сложностями в пайплайнах данных, требуется автоматизация отчетности или ищете сильного аналитика в команду? Оставьте запрос ниже.",
+      title: "Построим масштабируемую аналитическую инфраструктуру",
+      description: "Планируете миграцию отчетности с Qlik Sense на Power BI, рефакторинг DWH или требуется Lead-эксперт по данным? Оставьте запрос ниже.",
       sidebar: {
         name: "Абай Сыздыков",
-        role: "Аналитик данных и BI-специалист",
-        bio: "Доступен для удаленных контрактов, консалтинга по аналитике, внедрения дашбордов и постоянных senior-позиций.",
+        role: "Ведущий BI-инженер и архитектор данных",
+        bio: "Доступен для контрактных ролей Lead / Architect, консалтинга по архитектуре DWH, миграциям BI (Qlik в Power BI) и внедрению ИИ-пайплайнов.",
         responseTimeLabel: "Время ответа",
         responseTimeValue: "В течение 24 рабочих часов",
         locationLabel: "Локация и часовой пояс",
@@ -739,15 +845,15 @@ export const translations: Record<Locale, Translations> = {
       }
     },
     footer: {
-      rights: "Все права защищены. Аналитик данных и BI-специалист.",
+      rights: "Все права защищены. Ведущий BI-инженер и архитектор данных.",
       edgeBadge: "Высокоскоростная инфраструктура Edge • Cloudflare Pages + Workers",
       backToTop: "↑ Наверх"
     }
   },
   kk: {
     meta: {
-      title: "Абай Сыздықов | Деректер аналитигі және BI маманы",
-      description: "Senior Data Analyst & BI маманы. Күрделі бизнес-деректерді автоматтандырылған дашбордтарға, табысты арттыруға және басшылыққа арналған стратегиялық шешімдерге айналдырамын."
+      title: "Абай Сыздықов | Жетекші BI-инженер & Деректер архитекторы",
+      description: "Жетекші BI-инженер және деректер архитекторы. Корпоративтік DWH (PostgreSQL, FDW), Qlik-тен Power BI-ге көшіру, мемлекеттік және өнеркәсіптік сатып алулар аналитикасы және жасанды интеллект жүйелері."
     },
     nav: {
       overview: "Шолу",
@@ -758,30 +864,30 @@ export const translations: Record<Locale, Translations> = {
       contact: "Байланыс"
     },
     hero: {
-      availableBadge: "ЖАҢА ЖОБАЛАРҒА АШЫҚ",
-      headingPrefix: "Күрделі деректерді ",
-      headingGradient: "бизнеске табыс әкелетін нақты шешімдерге айналдыру",
+      availableBadge: "LEAD & ARCHITECT РОЛДЕРІНЕ АШЫҚ",
+      headingPrefix: "Корпоративтік деректер инженериясы және ",
+      headingGradient: "қолданбалы жасанды интеллект",
       bioIntro: "Сәлем, мен ",
       bioName: "Абай Сыздықов",
-      bioRole: "деректер аналитигі және BI маманымын",
-      bioBody: ". Мен инженерлік деректер инфрақұрылымын басшылықтың стратегиялық коммерциялық шешімдерімен байланыстыратын автоматтандырылған есептілік жүйелерін, көпдеңгейлі маркетингтік атрибуцияны және клиенттердің кетуін болжайтын моделдерді әзірлеймін.",
+      bioRole: "Жетекші BI-инженер және деректер архитекторымын",
+      bioBody: ". Мен сенімді корпоративтік деректер қоймаларын (PostgreSQL-дегі Bronze-Silver-Gold архитектурасы, FDW) жобалаймын, есептілік жүйелерін жаңғыртамын (Qlik Sense-тен Power BI-ге көшіру) және қолданбалы ЖИ шешімдерін (Multi-LLM Council) өндіріске енгіземін.",
       contactBtn: "Жобаны талқылау",
       downloadCvBtn: "Түйіндемені жүктеу (PDF)",
-      cvFileName: "Abay_Syzdykov_Data_Analyst_CV.pdf",
-      toolingTitle: "Негізгі құзыреттер мен технологиялық стек",
+      cvFileName: "Abay_Syzdykov_CV_EN.pdf",
+      toolingTitle: "Негізгі құзыреттер мен корпоративтік стек",
       tools: [
-        "SQL (Snowflake / BigQuery / Postgres)",
-        "Python (Pandas / Scikit / NumPy)",
-        "Power BI & Тереңдетілген DAX",
-        "Apache ECharts / DataViz",
-        "ETL & dbt Деректер құбырлары",
-        "Статистикалық модельдеу & A/B тестілеу"
+        "PostgreSQL (DWH Bronze-Silver-Gold, FDW)",
+        "Qlik Sense Enterprise және Power BI (DAX, RLS)",
+        "Python (EDA, статистика, FastAPI, өміршеңдік моделдері)",
+        "Kestra & Docker (Құбырларды басқару)",
+        "Modern Data Stack (Snowflake & dbt)",
+        "Мультиагенттік ЖИ (Multi-LLM Council, Antigravity 2.0)"
       ],
-      topRatedBadge: "Жоғары бағаланған",
-      badge1Label: "Есептілікті автоматтандыру",
-      badge1Value: "100% қол еңбегінсіз",
-      badge2Label: "Шығындарды азайту",
-      badge2Value: "Жылдық табысқа +$320K үлес"
+      topRatedBadge: "Lead Impact",
+      badge1Label: "Инфрақұрылым ауқымы",
+      badge1Value: "100+ кластер пайдаланушысы",
+      badge2Label: "Үдерістер мен TCO оңтайландыру",
+      badge2Value: "-20% цикл / лицензия үнемдеу"
     },
     metrics: {
       badge: "Интерактивті тәжірибе көрсетілімі",
@@ -833,9 +939,9 @@ export const translations: Record<Locale, Translations> = {
     },
     cases: {
       badge: "STAR әдістемесі: Нақты нәтижелер",
-      title: "Таңдаулы коммерциялық кейстер",
-      description: "Математикалық дәлдік, өндірістік деректер инженериясы және топ-менеджмент шешімдеріне арналған сапалы есептілік арқылы шешілген нақты бизнес міндеттері.",
-      viewDashboardBtn: "Интерактивті дашбордты ашу",
+      title: "Флагмандық инженерлік кейстер және қолданбалы ЖИ",
+      description: "Ұлттық холдингтер мен өнеркәсіп міндеттерін DWH, есептілік миграциясы және автономды ЖИ агенттері арқылы шешу.",
+      viewDashboardBtn: "Тікелей дашбордты ашу",
       githubSourceBtn: "GitHub бастапқы коды",
       clientPrefix: "Тапсырыс беруші: ",
       situationLabel: "Жағдай және бизнес міндеті (Situation & Task)",
@@ -843,51 +949,67 @@ export const translations: Record<Locale, Translations> = {
       resultsLabel: "Өлшенетін нәтижелер (Result)",
       items: [
         {
-          id: "churn-engine",
-          tag: "FinTech және SaaS",
-          title: "Жазылушылар когортасын ұстап қалу және кетуді болжау жүйесі",
-          clientType: "B2B SaaS ($12M жылдық табыс)",
-          situation: "Жазылушылардың кету деңгейі екінші айдан кейін қай когорталардың азайғанын көрсетпей, тоқсан сайын 3.2%-ға өсіп отырды. Басшылық кешігіп келетін 30 күндік биллингтік есептерге ғана сүйеніп, қауіп-қатердің алдын алатын бақылау индикаторларына ие болмады.",
-          action: "1.8M жазылушының белсенділік логтарын реттейтін dbt/Snowflake автоматтандырылған деректер моделін құрдым. Негізгі кедергілерді анықтау үшін Python-да өміршеңдік талдауын (Каплан-Мейер және Кокс пропорционалды қатерлері) әзірледім. Тәуекел тобындағы аккаунттар бойынша нақты уақытта ескертулері бар және когорталар динамикасын бақылайтын DAX негізіндегі Power BI дашбордын жасап шықтым.",
+          id: "kmg-bi-modernization",
+          tag: "Корпоративтік BI жаңғырту",
+          title: "Корпоративтік есептілікті Qlik Sense-тен Power BI-ге көшіру және TCO оңтайландыру",
+          clientType: "«KMG DIGITAL» ЖШС (Ұлттық мұнай-газ холдингі)",
+          situation: "Бастапқы құжаттамасы жоқ Qlik Sense легаси-дашбордтары тұрақты жоғары лицензиялық шығындарды талап етті және өндірістік KPI көрсеткіштерінің скрипттері шашыраңқы болды.",
+          action: "Qlik load scripts құрылымына реинжиниринг жүргізіп, екі негізгі корпоративтік дашбордты Power BI-ге сәтті көшірдім. 100+ пайдаланушыға арналған кластерлік инфрақұрылымды Row-Level Security (RLS) арқылы басқардым, веб-аналитика порталын вайбкодтап, команданың 3 маманына менторлық еттім.",
           resultMetrics: [
-            { label: "Когорталардағы кетуді азайту", value: "-18%", detail: "Орташа чек деңгейіндегі қауіпті топ жазылушылары арасында" },
-            { label: "Сақталған капитал", value: "+$320K", detail: "Сақталған жылдық тұрақты табыс (ARR)" },
-            { label: "Есептілік тиімділігі", value: "14сағ → 0сағ", detail: "Апта сайынғы қолмен кесте толтыру толық автоматтандырылды" }
+            { label: "Лицензия үнемдеу", value: "Жыл сайын", detail: "Qlik лицензиялық шығындары оңтайландырылды" },
+            { label: "Кластер ауқымы", value: "100+ пайдал.", detail: "Деректерді жаңартудың 30 тұрақты міндеті" },
+            { label: "Команда дамуы", value: "3 инженер", detail: "Тұрақты менторлық пен біліктілікті арттыру" }
           ],
-          techStack: ["Snowflake", "dbt", "Python (Lifelines/Pandas)", "Power BI", "Advanced DAX"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+          techStack: ["Power BI", "Qlik Sense Enterprise", "DAX", "Row-Level Security (RLS)", "Вайбкодинг (HTML/JS)"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
           dashboardAnchor: "#showcase"
         },
         {
-          id: "marketing-attribution",
-          tag: "E-Commerce және DTC",
-          title: "Көпдеңгейлі маркетингтік атрибуция және юнит-экономика модулі",
-          clientType: "DTC-бренд (Жарнамалық бюджет $2.4M)",
-          situation: "Google Search, Meta Ads және TikTok арналарындағы жарнама шығындарының ROAS көрсеткіштері 'соңғы шерту' (last-click) қателігіне байланысты бұрмаланып, нәтижесінде тиімділігі төмен науқандар артық қаржыландырылып, алғашқы тарту арналарына қаржы жетіспеді.",
-          action: "Python-да Марков тізбектеріне негізделген жеке көпдеңгейлі атрибуция алгоритмін жасап шықтым. BigQuery-дегі SQL терезелік функциялары арқылы 4.2M кликстрим оқиғаларын өңдеп, біріктірдім. Әр арнаға салынған әрбір доллардан түсетін кірісті болжайтын басшылыққа арналған интерактивті сценарийлер симуляторын енгіздім.",
+          id: "hr-attrition-platform",
+          tag: "Интерактивті аналитика",
+          title: "Кадрлардың кетуі мен тұрақтылығын талдайтын интерактивті HR-платформасы",
+          clientType: "Корпоративтік кадрлық телеметрия (Live Web App)",
+          situation: "Басшылық тоқсан сайынғы кешіккен есептерге ғана сүйеніп, маңызды қызметкерлердің кету қаупін алдын ала ескертетін жедел құралдарға ие болмады.",
+          action: "Cloudflare Pages-те React 18, Vite және TailwindCSS негізінде интерактивті портал әзірледім: департаменттер мен лауазымдар бойынша көпсатылы сүзгілер, қызметкерлер профилі және кадрларды сақтап қалу қаупін болжайтын динамикалық симулятор.",
           resultMetrics: [
-            { label: "Жалпы ROAS өсімі", value: "+23%", detail: "Жарнамалық инвестициялардың қайтарымы оңтайландырылды" },
-            { label: "Бюджетті қайта бөлу", value: "28%", detail: "Ең жоғары конверсия беретін кезеңдерге қайта бағытталды" },
-            { label: "Таза қосымша табыс", value: "+$640K", detail: "Медиамиксті оңтайландырудың тікелей нәтижесі" }
+            { label: "Интерфейс жылдамдығы", value: "<100мс", detail: "Когорталарды нақты уақытта жылдам сүзу" },
+            { label: "Serverless Edge", value: "Cloudflare", detail: "Серверлік инфрақұрылымға нөлдік шығын" },
+            { label: "Қауіп симуляторы", value: "Real-Time", detail: "Кадрларды ұстап қалуды проактивті бағалау" }
           ],
-          techStack: ["Google BigQuery", "Python (NetworkX/NumPy)", "SQL Терезелік функциялары", "Power BI", "ECharts"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
-          dashboardAnchor: "#showcase"
+          techStack: ["React 18", "Vite", "TailwindCSS", "Chart.js", "Cloudflare Pages"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
+          dashboardAnchor: "https://webdashboards.pages.dev"
         },
         {
-          id: "logistics-sla",
-          tag: "Логистика және жеткізу тізбегі",
-          title: "Фулфилмент SLA оңтайландыру және қойма жүктемесін болжау",
-          clientType: "Өңірлік логистикалық 3PL желісі",
-          situation: "Маусымдық жүктеменің шарықтауы салдарынан жеткізу бойынша SLA бұзылуы 12%-ға жетіп, $85K көлемінде келісімшарттық айыппұл төлеуге және қойма жұмыскерлерінің шектен тыс шаршауына әкеп соқтырды.",
-          action: "Кіріс жөнелтілімдер көлемін 94.2% дәлдікпен болжайтын уақыттық қатарлар моделдерін (Python ARIMA және Prophet) оқыттым. Бөлімделген Postgres деректер витриналарына жүктеу процесін оңтайландырып, ауысым жетекшілеріне арналған нақты уақыттағы жедел канбан-дашбордтарын іске қостым.",
+          id: "llm-counsil",
+          tag: "Мультиагенттік ЖИ",
+          title: "Автономды стратегиялық мульти-LLM консилиум оркестраторы",
+          clientType: "Ашық кодты ЖИ архитектурасы (`llm-counsil`)",
+          situation: "Күрделі жүйелік архитектураны және ірі жобаларды бағалау кезінде жеке тілдік моделдер субъективтілік пен галлюцинацияға ұшырайды.",
+          action: "Google Antigravity 2.0 ортасында 5 озық тілдік модельді (Claude, ChatGPT, Gemini Pro, Grok, Nemotron) анонимді түрде өзара сыннан өткізетін, Anti-Leak Sanitizer (RFC #2), Concurrency Clipboard Mutex (RFC #3) және Google NotebookLM интеграциясы бар автономды оркестратор құрдым.",
           resultMetrics: [
-            { label: "Жеткізу SLA бұзылуы", value: "12% → 2.4%", detail: "Жөнелту кешігулері 80%-ға қысқартылды" },
-            { label: "Айыппұлдардың алдын алу", value: "+$75,000", detail: "Шарттық айыппұлдар бойынша сақталған қаражат" },
-            { label: "Уақтылы жөнелту көрсеткіші", value: "98.6%", detail: "4-тоқсандағы ең қарбалас мерекелік кезеңде тұрақты сақталды" }
+            { label: "Дивергенция тереңдігі", value: "5 модель", detail: "Модельдердің біржақтылығын толық жою" },
+            { label: "Синтез сапасы", value: ">50 КБ", detail: "RFC #1 Quality Floor талаптарымен расталған" },
+            { label: "Сенімділік стандарты", value: "DONE = VERIFIED", detail: "Тікелей автоматтандырылған тексеру циклі" }
           ],
-          techStack: ["PostgreSQL", "Python (Prophet/Statsmodels)", "Автоматтандырылған ETL", "ECharts", "Metabase"],
-          githubUrl: "https://github.com/blacktapeproject263-alt/abay_landing",
+          techStack: ["Google Antigravity 2.0", "Python", "PowerShell 7 Core", "Ollama", "Chrome CDP", "NotebookLM"],
+          githubUrl: "https://github.com/blacktapeproject263-alt/llm-counsil",
+          dashboardAnchor: "https://github.com/blacktapeproject263-alt/llm-counsil"
+        },
+        {
+          id: "erg-procurement-dwh",
+          tag: "Сатып алу және TCO",
+          title: "Сатып алудың корпоративтік DWH қоймасы және баға құпиялылығын қорғау",
+          clientType: "ERG Capital Projects (Еуразиялық Топ)",
+          situation: "SAP, OutSystems және Oracle MDM жүйелерінің оқшаулануы салдарынан сатып алу рәсімдерінің келісу циклі 90 күнге созылып, ішкі баға лимиттерінің жария болып кету қаупі туындады.",
+          action: "SAP, Oracle MDM және Qlik Sense деректерін бірыңғай сенімді көзге (Single Source of Truth) біріктірген Сатып алудың бірыңғай стратегиялық есептілік жүйесін құруға жетекшілік еттім. Құпия бағалар бойынша қатаң Row-Level Security (RLS) саясатын енгіздім.",
+          resultMetrics: [
+            { label: "Сатып алу циклі", value: "-20%", detail: "Мерзімдерді 90 күннен 72 күнге дейін қысқарту" },
+            { label: "Келісу кешігулері", value: "-15%", detail: "Инженерлік құжаттаманы бекітуді 35%-ға жеделдету" },
+            { label: "Жеткізушілер базасы", value: "1 000+ кәсіп.", detail: "Орталықтандырылған аудиторлық тізілім" }
+          ],
+          techStack: ["PostgreSQL DWH", "SAP MM/PTP", "Oracle MDM", "Qlik Sense", "Row-Level Security (RLS)"],
+          githubUrl: "https://github.com/blacktapeproject263-alt",
           dashboardAnchor: "#showcase"
         }
       ]
@@ -895,11 +1017,40 @@ export const translations: Record<Locale, Translations> = {
     certifications: {
       badge: "Расталған біліктілік пен сынақ алаңдары",
       title: "Кәсіби сертификаттар және интерактивті шоукейстер",
-      description: "Дерекқорларды жобалау, бұлтты инженерия және басқарушылық BI-жүйелерін құру бойынша ресми халықаралық сертификаттар мен интерактивті сынақ алаңдары.",
+      description: "Дерекқорларды жобалау, бұлтты инженерия және қолданбалы ЖИ жүйелері бойынша ресми халықаралық сертификаттар мен тікелей веб-қосымшалар.",
       verifyBtn: "Сертификатты тексеру →",
       pdfBtn: "Сертификатты көру (PDF) →",
-      viewPlaygroundBtn: "Интерактивті стендті ашу →",
+      viewPlaygroundBtn: "Қосымшаны ашу →",
       items: [
+        {
+          id: "hr-attrition-app",
+          title: "Кадрлар аналитикасы порталы (webdashboards.pages.dev)",
+          issuer: "Cloudflare Pages-тегі өндірістік қосымша",
+          badgeText: "Тікелей веб-қосымша",
+          description: "React 18, Vite және Chart.js негізіндегі интерактивті талдау жүйесі: кадрлардың ауысу динамикасын бақылау, департаменттерді сүзу, қызметкерлер карточкасы және кету қаупін модельдеу симуляторы.",
+          skills: ["React 18", "Vite", "TailwindCSS", "Chart.js", "HR-аналитика", "Cloudflare Pages"],
+          credentialUrl: "https://webdashboards.pages.dev",
+          isPlayground: true
+        },
+        {
+          id: "llm-counsil-open-source",
+          title: "Multi-LLM стратегиялық консилиум оркестраторы",
+          issuer: "Google Antigravity 2.0 & Ашық код",
+          badgeText: "ЖИ-архитектурасы",
+          description: "RFC #1 Quality Floor, Anti-Leak Sanitizer, Concurrency Clipboard Mutex хаттамалары мен Google NotebookLM синхрондауы бар 5 озық модель негізіндегі автономды мультиагенттік жүйе.",
+          skills: ["Мультиагенттік ЖИ", "Google Antigravity 2.0", "Python", "Ollama", "Chrome CDP", "Google NotebookLM"],
+          credentialUrl: "https://github.com/blacktapeproject263-alt/llm-counsil",
+          isPlayground: true
+        },
+        {
+          id: "qlik-sense-expert",
+          title: "Qlik Sense сарапшысы (Qlik Sense Expert)",
+          issuer: "Datanomix Академиясы",
+          badgeText: "Enterprise BI",
+          description: "Күрделі деректерді модельдеу, load scripts реинжинирингі, Set Analysis, NPrinting автоматты есептілігі және корпоративтік кластерді басқару (100+ пайдаланушы, RLS).",
+          skills: ["Qlik Sense Enterprise", "Load Scripts", "Set Analysis", "NPrinting", "Row-Level Security"],
+          credentialUrl: "https://www.linkedin.com/in/abay-syzdykov-ba4b75113/"
+        },
         {
           id: "python-data-analysis",
           title: "Python Data Analysis (NASBA аккредитациясы)",
@@ -919,14 +1070,22 @@ export const translations: Record<Locale, Translations> = {
           credentialUrl: "https://www.getdbt.com/"
         },
         {
-          id: "echarts-sandbox",
-          title: "Interactive ECharts / Analytical Playground",
-          issuer: "Тікелей телеметрия сынақ алаңы",
-          badgeText: "Интерактивті стенд",
-          description: "Apache ECharts негізінде жасалған өнімділігі жоғары талдау қозғалтқышы: когорталардың кету қисықтарын (churn), MRR өсу динамикасын және юнит-экономика көрсеткіштерін нақты уақытта модельдеу мүмкіндігі.",
-          skills: ["Apache ECharts", "Когорталық талдау", "Юнит-экономика", "Интерактивті телеметрия"],
-          credentialUrl: "#showcase",
-          isPlayground: true
+          id: "toastmasters-international",
+          title: "Toastmasters International (Competent Communicator)",
+          issuer: "Toastmasters International",
+          badgeText: "Көшбасшылық пен шешендік",
+          description: "Халықаралық деректер инженериясы іс-шаралары мен техникалық воркшоптардың мойындалған спикері, кросс-функционалды байланыс көшбасшысы.",
+          skills: ["Executive-байланыс", "Инженерлік менторлық", "Стейкхолдерлермен жұмыс"],
+          credentialUrl: "https://www.toastmasters.org/"
+        },
+        {
+          id: "chinese-hsk5",
+          title: "Қытай тілі: HSK 5-деңгей (Еркін меңгерген)",
+          issuer: "Конфуций Институты / Hanban",
+          badgeText: "Кәсіби еркін деңгей",
+          description: "Қытайлық EPC-мердігерлермен (Sinopec, KERUI, Sitan) екітілді техникалық және коммерциялық келіссөздер жүргізу, құжаттама аудару және халықаралық жобаларды басқару. Сиань мұнай университетінің түлегі.",
+          skills: ["Қытай тілі (HSK 5)", "Мұнай-газ инженериясы", "B2B EPC келіссөздері", "Халықаралық операциялар"],
+          credentialUrl: "https://www.linkedin.com/in/abay-syzdykov-ba4b75113/"
         }
       ]
     },
@@ -987,12 +1146,12 @@ export const translations: Record<Locale, Translations> = {
     },
     contact: {
       badge: "Тікелей байланыс",
-      title: "Бизнеске нәтиже беретін деректер инфрақұрылымын бірге құрайық",
-      description: "Деректер құбырында кедергілер бар ма, есептілікті автоматтандыру қажет пе немесе тәжірибелі деректер аналитигін іздеп жүрсіз бе? Төменде өтінім қалдырыңыз.",
+      title: "Нәтижеге бағытталған деректер инфрақұрылымын бірге құрайық",
+      description: "Qlik Sense-тен Power BI-ге есептілікті көшіруді жоспарлап отырсыз ба, DWH архитектурасын рефакторингтеу қажет пе немесе Lead-маман іздеп жүрсіз бе? Төменде өтінім қалдырыңыз.",
       sidebar: {
         name: "Абай Сыздықов",
-        role: "Деректер аналитигі және BI маманы",
-        bio: "Қашықтан келісімшарттарға, аналитикалық консалтингке, дашбордтарды енгізуге және тұрақты senior-лауазымдарға ашықпын.",
+        role: "Жетекші BI-инженер және деректер архитекторы",
+        bio: "Lead / Architect деңгейіндегі келісімшарттарға, DWH архитектурасы бойынша консалтингке, BI көшіруге және ЖИ жүйелерін енгізуге ашықпын.",
         responseTimeLabel: "Жауап беру уақыты",
         responseTimeValue: "24 жұмыс сағаты ішінде",
         locationLabel: "Орналасқан жері және уақыт белдеуі",
@@ -1017,7 +1176,7 @@ export const translations: Record<Locale, Translations> = {
       }
     },
     footer: {
-      rights: "Барлық құқықтар қорғалған. Деректер аналитигі және BI маманы.",
+      rights: "Барлық құқықтар қорғалған. Жетекші BI-инженер және деректер архитекторы.",
       edgeBadge: "Жоғары жылдамдықты Edge инфрақұрылымы • Cloudflare Pages + Workers",
       backToTop: "↑ Жоғарыға"
     }
